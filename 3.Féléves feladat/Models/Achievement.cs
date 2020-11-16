@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models
 {
-    class Achievement
+    public class Achievement
     {
     }
 }
