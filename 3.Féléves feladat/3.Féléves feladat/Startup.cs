@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Logic;
+using Repository;
+
 
 namespace _3.Féléves_feladat
 {
@@ -16,6 +19,13 @@ namespace _3.Féléves_feladat
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<UserRepo, UserRepo>();
+            services.AddTransient<UserLogic,UserLogic>();
+            services.AddTransient<GameLogic, GameLogic>();
+            services.AddTransient<GameRepo, GameRepo>();
+            services.AddTransient<AchiLogic, AchiLogic>();
+            services.AddTransient<AchievementRepo, AchievementRepo>();
+
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
 
 

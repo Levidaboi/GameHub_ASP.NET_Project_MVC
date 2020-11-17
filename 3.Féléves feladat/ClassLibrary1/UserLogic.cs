@@ -5,7 +5,7 @@ using System.Linq;
 
 
 
-namespace ClassLibrary1
+namespace Logic
 {
     public class UserLogic
     {
