@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repository
 {
-    class GameRepo : IRepo<Game>
+     public  class GameRepo : IRepo<Game>
     {
         UserDbContext db = new UserDbContext();
         public void Add(Game item)

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repository
 {
-    class AchievementRepo : IRepo<Achievement>
+    public class AchievementRepo : IRepo<Achievement>
     {
         UserDbContext db = new UserDbContext();
 
