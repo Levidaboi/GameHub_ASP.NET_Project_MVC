@@ -1,4 +1,5 @@
 ﻿using Models;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +7,64 @@ using System.Text;
 
 namespace Repository
 {
-    class UserRepo : IRepo<User>
+    public class UserRepo : IRepo<User>
     {
-       
+        UserDbContext db = new UserDbContext();
+        public void Add(User item)
+        {
+            db.Users.Add(item);
+            Save();
+        }
+
+        public void Delete(User item)
+        {
+            db.Users.Remove(item);
+            Save();
+        }
+
+        public void Delete(string uid)
+        {
+            User item = Read(uid);
+            db.Users.Remove(item);
+            Save();
+            
+        }
+
+        public User Read(string uid)
+        {
+            User item = (from x in db.Users
+                         where x.Id == uid
+                         select x).FirstOrDefault();
+            return item;
+        }
+
+        public IQueryable<User> AllItem()
+        {
+            return db.Users.AsQueryable();
+        }
+
+        public void Save()
+        {
+            db.SaveChanges();
+        }
+
+        public void Update(string oldid, User newitem)
+        {
+            User olduser = Read(oldid);
+
+            olduser.Name = newitem.Name;
+            olduser.Age = newitem.Age;
+            olduser.GameLibrary.Clear();
+            foreach (var item in newitem.GameLibrary)
+            {
+                olduser.GameLibrary.Add(item);
+            }
+            Save();
+        }
+
+        public IQueryable<User> Read()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

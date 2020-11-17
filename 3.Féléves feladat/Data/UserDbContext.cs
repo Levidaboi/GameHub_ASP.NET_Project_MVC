@@ -4,10 +4,10 @@ using System;
 
 namespace Data
 {
-    public class PlayersDbContext : DbContext
+    public class UserDbContext : DbContext
     {
        
-        public PlayersDbContext(DbContextOptions<PlayersDbContext> opt) : base(opt)
+        public UserDbContext(DbContextOptions<UserDbContext> opt) : base(opt)
         {
 
         }
@@ -24,7 +24,7 @@ namespace Data
             }
         }
 
-        public PlayersDbContext()
+        public UserDbContext()
         {
             this.Database.EnsureCreated();
         }

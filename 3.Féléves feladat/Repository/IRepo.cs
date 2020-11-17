@@ -13,7 +13,7 @@ namespace Repository
 
         T Read(string uid);
 
-        IQueryable<T> Read();
+        IQueryable<T> AllItem();
 
         void Update(string oldid, T newitem);
 
