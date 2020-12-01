@@ -29,14 +29,17 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult GenerateData()
         {
-            User u = new User() { Name = "Róland", Age = 21};
+            User u = new User() { Name = "Róland", Age = 21 };
             u.UserId = Guid.NewGuid().ToString();
             userLogic.AddNewUser(u);
 
-            Game g = new Game() {Name = "Serious Sam" , UserId = u.UserId , Rating = 2 , GameTime = 30 };
+            Game g = new Game() { Name = "Serious Sam", UserId = u.UserId, Rating = 2, GameTime = 30 };
             g.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g);
 
+            Achievement a = new Achievement() { Name = "Kitoltad " , achiLevel = AchiLevel.gold ,GameId = g.GameId };
+            a.AchiId = Guid.NewGuid().ToString();
+            achiLogic.AddAchi(a);
 
 
             User u2 = new User() { Name = "Levike", Age = 17 };
@@ -47,12 +50,18 @@ namespace _3.Féléves_feladat.Controllers
             g2.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g2);
 
+            Achievement a2 = new Achievement() { Name = "Hit nélkül", achiLevel = AchiLevel.silver, GameId = g2.GameId };
+            a2.AchiId = Guid.NewGuid().ToString();
+            achiLogic.AddAchi(a2);
+
+
             Game g3 = new Game() { Name = "Red Dead Redemption 2", UserId = u2.UserId, Rating = 5, GameTime = 80 };
             g3.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g3);
 
-
-
+            Achievement a3 = new Achievement() { Name = "Semmit Nem csinaltal ", achiLevel = AchiLevel.bronze, GameId = g2.GameId };
+            a3.AchiId = Guid.NewGuid().ToString();
+            achiLogic.AddAchi(a3);
 
             return  RedirectToAction(nameof(Index));
 
