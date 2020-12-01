@@ -58,7 +58,7 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult ListUsers()
         {
-            return View(userLogic.GetUsers());
+            return View(userLogic.GetUsers()); ;
         }
 
 
