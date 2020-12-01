@@ -45,7 +45,7 @@ namespace _3.Féléves_feladat.Controllers
             return RedirectToAction(nameof(ListUsers));
         }
 
-        
+
         public IActionResult DeleteUser(string id)
         {
             userLogic.DeleteUser(id);
@@ -54,14 +54,12 @@ namespace _3.Féléves_feladat.Controllers
         }
 
 
-
-
         public IActionResult ListUsers()
         {
-            ;
-
             return View(userLogic.GetUsers()); ;
         }
+
+
 
 
         //GAME
@@ -69,40 +67,70 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult AddGame(string id)
         {
-            return View(nameof(AddGame),id);
+            return View(nameof(AddGame), id);
 
         }
-        
+
 
         [HttpPost]
         public IActionResult AddGame(Game g)
         {
-            User u =  userLogic.GetUser(g.UserId);
+            User u = userLogic.GetUser(g.UserId);
             g.GameId = Guid.NewGuid().ToString();
-            
             u.GameLibrary.Add(g);
 
+            gameLogic.AddGame(g);
 
-             return View(nameof(ListGames), u.GameLibrary);
+
+            return View(nameof(ListGames), u.GameLibrary);
 
         }
-       
-      
-        
+
+
+
+
+
+        public IActionResult ListAllGames()
+        {
+
+            return View(nameof(ListAllGames), gameLogic.GetAllGames());
+
+        }
+
         public IActionResult ListGames(string Id)
         {
             User u = userLogic.GetUser(Id);
 
-            if (u.GameLibrary.Count() == 0)
-            {
-                return View(nameof(AddGame), Id);
-            }
-            else
-            {
-                return View(u.GameLibrary.AsQueryable());
-            }
+            return View(u.GameLibrary.AsQueryable());
+
+
+
+        }
+
+
+        public IActionResult DeleteGame(string Id)
+        {
+
             
+            Game g = gameLogic.GetGame(Id);
             
+            gameLogic.DeleteGame(Id);
+
+
+           return View(nameof(ListGames),userLogic.GetUser(g.UserId).GameLibrary);
+        }
+
+
+        public IActionResult DeleteGameFromAllGames(string Id)
+        {
+
+
+            Game g = gameLogic.GetGame(Id);
+
+            gameLogic.DeleteGame(Id);
+
+
+            return View(nameof(ListGames), gameLogic.GetAllGames()) ;
         }
 
     }

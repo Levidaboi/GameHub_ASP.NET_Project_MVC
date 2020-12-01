@@ -26,7 +26,7 @@ namespace _3.Féléves_feladat
             services.AddTransient<AchiLogic, AchiLogic>();
             services.AddTransient<AchievementRepo, AchievementRepo>();
 
-            services.AddMvc(opt => opt.EnableEndpointRouting = false);
+            services.AddMvc(opt => opt.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 
 
         }
@@ -43,7 +43,8 @@ namespace _3.Féléves_feladat
             app.UseMvcWithDefaultRoute();
             app.UseRouting();
 
-            
+            app.UseStaticFiles();
+
         }
     }
 }

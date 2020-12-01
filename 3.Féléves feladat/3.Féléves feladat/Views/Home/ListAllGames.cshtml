@@ -6,7 +6,6 @@
 <head>
     <title>Game Listing</title>
     <style>
-
     </style>
 </head>
 
@@ -34,27 +33,27 @@
         <tbody>
             @foreach (var item in Model)
             {
-             <tr>
+                <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GameTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
 
-                    <a href="/Home/DeleteGame?Id=@item.GameId">Delete</a>
-                    <br />
+                        <a href="/Home/DeleteGameFromAllGames?Id=@item.GameId">Delete</a>
+                        <br />
 
-                </td>
-            </tr>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -63,4 +62,6 @@
     <a href="/Home/Index">Back To Hub</a>
 </body>
 </html>
+
+
 

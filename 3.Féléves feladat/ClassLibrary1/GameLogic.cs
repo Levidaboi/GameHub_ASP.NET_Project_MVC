@@ -19,16 +19,17 @@ namespace Logic
         public void AddGame(Game game)
         {
             gameRepo.Add(game);
-
+            gameRepo.Save();
         }
 
-        public void DeleteGame(Game game)
+        public void DeleteGame(string id)
         {
-            gameRepo.Delete(game);
+            Game g = GetGame(id);
+            gameRepo.Delete(g);
 
         }
 
-        public IQueryable<Game> GetAllTeam()
+        public IQueryable<Game> GetAllGames()
         {
             return gameRepo.AllItem();
         }
