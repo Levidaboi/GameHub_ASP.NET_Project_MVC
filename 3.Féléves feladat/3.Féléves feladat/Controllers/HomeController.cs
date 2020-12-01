@@ -192,6 +192,13 @@ namespace _3.Féléves_feladat.Controllers
         }
 
 
+        public IActionResult DeleteAchi(string id)
+        {
+            Achievement a = achiLogic.GetAchievement(id);
+            achiLogic.DeleteAchi(a);
+            return View(nameof(ListAchi), gameLogic.GetGame(a.GameId).Achievements);
+        }
+
 
     }
 }
