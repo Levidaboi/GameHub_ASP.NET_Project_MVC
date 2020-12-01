@@ -76,7 +76,7 @@ namespace _3.Féléves_feladat.Controllers
         public IActionResult AddGame(Game g)
         {
             User u =  userLogic.GetUser(g.UserId);
-            u.GameLibrary.Add(g);
+            u.GameLibrary.Add(g); ;
 
 
             return View(nameof(ListGames),g.UserId);
