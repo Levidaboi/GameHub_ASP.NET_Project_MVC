@@ -27,6 +27,38 @@ namespace _3.Féléves_feladat.Controllers
             return View();
         }
 
+        public IActionResult GenerateData()
+        {
+            User u = new User() { Name = "Róland", Age = 21};
+            u.UserId = Guid.NewGuid().ToString();
+            userLogic.AddNewUser(u);
+
+            Game g = new Game() {Name = "Serious Sam" , UserId = u.UserId , Rating = 2 , GameTime = 30 };
+            g.GameId = Guid.NewGuid().ToString();
+            gameLogic.AddGame(g);
+
+
+
+            User u2 = new User() { Name = "Levike", Age = 17 };
+            u2.UserId = Guid.NewGuid().ToString();
+            userLogic.AddNewUser(u2);
+
+            Game g2 = new Game() { Name = "Cyberpunk 2077", UserId = u2.UserId, Rating = 5, GameTime = 150 };
+            g2.GameId = Guid.NewGuid().ToString();
+            gameLogic.AddGame(g2);
+
+            Game g3 = new Game() { Name = "Red Dead Redemption 2", UserId = u2.UserId, Rating = 5, GameTime = 80 };
+            g3.GameId = Guid.NewGuid().ToString();
+            gameLogic.AddGame(g3);
+
+
+
+
+            return  RedirectToAction(nameof(Index));
+
+        }
+
+
         //USER
 
 
@@ -77,8 +109,6 @@ namespace _3.Féléves_feladat.Controllers
         {
             User u = userLogic.GetUser(g.UserId);
             g.GameId = Guid.NewGuid().ToString();
-            u.GameLibrary.Add(g);
-
             gameLogic.AddGame(g);
 
 
@@ -132,6 +162,8 @@ namespace _3.Féléves_feladat.Controllers
 
             return View(nameof(ListGames), gameLogic.GetAllGames()) ;
         }
+
+
 
     }
 }
