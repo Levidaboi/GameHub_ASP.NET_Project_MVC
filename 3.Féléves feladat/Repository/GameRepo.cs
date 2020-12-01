@@ -37,7 +37,7 @@ namespace Repository
         public Game Read(string uid)
         {
             Game item = (from x in db.Games
-                        where x.Id == uid
+                        where x.GameId == uid
                         select x).FirstOrDefault();
             return item;
         }

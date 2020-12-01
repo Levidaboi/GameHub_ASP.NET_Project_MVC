@@ -27,6 +27,9 @@ namespace _3.Féléves_feladat.Controllers
             return View();
         }
 
+        //USER
+
+
         [HttpGet]
         public IActionResult AddUser()
         {
@@ -37,14 +40,53 @@ namespace _3.Féléves_feladat.Controllers
         [HttpPost]
         public IActionResult AddUser(User u)
         {
-            u.Id = Guid.NewGuid().ToString();
+            u.UserId = Guid.NewGuid().ToString();
             userLogic.AddNewUser(u);
-            return RedirectToAction(nameof(List));
+            return RedirectToAction(nameof(ListUsers));
         }
 
-        public IActionResult List()
+        
+        public IActionResult DeleteUser(string id)
+        {
+            userLogic.DeleteUser(id);
+            return RedirectToAction(nameof(ListUsers));
+
+        }
+
+
+
+
+        public IActionResult ListUsers()
         {
             return View(userLogic.GetUsers());
+        }
+
+
+        //GAME
+        [HttpGet]
+
+        public IActionResult AddGame(string id)
+        {
+            return View(nameof(AddGame),id);
+
+        }
+        
+
+        [HttpPost]
+        public IActionResult AddGame(Game g)
+        {
+            User u =  userLogic.GetUser(g.UserId);
+            u.GameLibrary.Add(g);
+
+
+            return View(nameof(ListGames),g.UserId);
+
+        }
+      
+        public IActionResult ListGames(string userid)
+        {
+            return View();
+        
         }
 
     }

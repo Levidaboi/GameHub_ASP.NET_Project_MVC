@@ -10,7 +10,7 @@ namespace Models
     public class Game
     {
         [Key]
-        public string Id { get; set; }
+        public string GameId { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
         public int GameTime { get; set; }

@@ -22,9 +22,9 @@ namespace Repository
             Save();
         }
 
-        public void Delete(string uid)
+        public void Delete(string id)
         {
-            User item = Read(uid);
+            User item = Read(id);
             db.Users.Remove(item);
             Save();
             
@@ -33,7 +33,7 @@ namespace Repository
         public User Read(string uid)
         {
             User item = (from x in db.Users
-                         where x.Id == uid
+                         where x.UserId == uid
                          select x).FirstOrDefault();
             return item;
         }
