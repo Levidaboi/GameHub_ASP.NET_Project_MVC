@@ -86,7 +86,7 @@ namespace _3.Féléves_feladat.Controllers
         public IActionResult ListGames(string userid)
         {
             return View();
-        
+            ;
         }
 
     }
