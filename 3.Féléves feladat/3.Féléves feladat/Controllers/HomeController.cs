@@ -163,6 +163,34 @@ namespace _3.Féléves_feladat.Controllers
             return View(nameof(ListGames), gameLogic.GetAllGames()) ;
         }
 
+        //Achievement
+
+        public IActionResult AddAchievement(string Id)
+        {
+            return View(nameof(AddAchievement),Id);
+        }
+
+        [HttpPost]
+        public IActionResult AddAchievement(Achievement a)
+        {
+            Game g = gameLogic.GetGame(a.GameId);
+            a.AchiId = Guid.NewGuid().ToString();
+            achiLogic.AddAchi(a);
+
+
+            return View(nameof(ListAchi), g.Achievements);
+
+        }
+
+
+        public IActionResult ListAchi(string Id)
+        {
+           
+            
+            
+            return View(nameof(ListAchi), gameLogic.GetGame(Id).Achievements);
+        }
+
 
 
     }

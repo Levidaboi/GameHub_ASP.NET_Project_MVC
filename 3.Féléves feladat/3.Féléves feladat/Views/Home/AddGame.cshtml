@@ -1,17 +1,30 @@
 ﻿@model string
 
-    <h1>    Add a game</h1>
-    <form action="/Home/AddGame" method="post">
-        Name:
-        <input type="text" name="Name" />
-        <input type="hidden" name="UserId" value="@Model" /><br />
-        Genre:
-        <input type="text" name="Genre" /><br />
-        Game Time:
-        <input type="number" name="GameTime" /><br />
-        Rating :
-        <input type="number" value="Rating" /><br />
+    <!DOCTYPE html5>
+    <html>
+    <head>
+        <title>New user add</title>
+        <style>
+        </style>
+    </head>
 
-        <input type="submit"  value="Add game" />
-         
-    </form>
+    <body>
+        <h1>    Add a game</h1>
+        <form action="/Home/AddGame" method="post">
+            Name:
+            <input type="text" name="Name" />
+            <input type="hidden" name="UserId" value="@Model" /><br />
+            Genre:
+            <input type="text" name="Genre" /><br />
+            Game Time:
+            <input type="number" name="GameTime" /><br />
+            Rating :
+            <input type="number" value="Rating" /><br />
+
+            <input type="submit" value="Add game" />
+
+        </form>
+    </body>
+
+</html>
+

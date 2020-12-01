@@ -1,7 +1,7 @@
 ﻿@using Models
 @model IEnumerable<Game>
 
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
 <head>
     <title>Game Listing</title>
@@ -52,7 +52,9 @@
 
                     <a href="/Home/DeleteGame?Id=@item.GameId">Delete</a>
                     <br />
-
+                    <a href="/Home/AddAchievement?Id=@item.GameId">Add Achievement</a>
+                    <br />
+                    <a href="/Home/ListAchi?Id=@item.GameId">Show Achievements</a>
                 </td>
             </tr>
             }

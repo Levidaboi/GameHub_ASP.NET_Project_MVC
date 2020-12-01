@@ -1,0 +1,28 @@
+﻿@model string
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>New user add</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>    Add new Achievement</h1>
+    <form action="/Home/AddAchievement" method="post">
+        Name :
+        <input type="text" name="Name" /><br />
+        <input type="hidden" name="GameId" value="@Model" />
+        Achievent's Level: <br />    
+        <input type="radio" id="bronze" name="achiLevel" value="bronze">
+        <label for="male">bronze</label><br>
+        <input type="radio" id="silver" name="achiLevel" value="silver">
+        <label for="female">silver</label><br>
+        <input type="radio" id="gold" name="achiLevel" value="gold">
+        <label for="other">gold</label>
+        <br />
+        <input type="submit" value="Add" />
+    </form>
+</body>
+
+</html>
