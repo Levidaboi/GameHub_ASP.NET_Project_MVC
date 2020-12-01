@@ -58,6 +58,8 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult ListUsers()
         {
+            ;
+
             return View(userLogic.GetUsers()); ;
         }
 
@@ -76,17 +78,31 @@ namespace _3.Féléves_feladat.Controllers
         public IActionResult AddGame(Game g)
         {
             User u =  userLogic.GetUser(g.UserId);
-            u.GameLibrary.Add(g); ;
+            g.GameId = Guid.NewGuid().ToString();
+            
+            u.GameLibrary.Add(g);
 
 
-            return View(nameof(ListGames),g.UserId);
+             return View(nameof(ListGames), u.GameLibrary);
 
         }
+       
       
-        public IActionResult ListGames(string userid)
+        
+        public IActionResult ListGames(string Id)
         {
-            return View();
-            ;
+            User u = userLogic.GetUser(Id);
+
+            if (u.GameLibrary.Count() == 0)
+            {
+                return View(nameof(AddGame), Id);
+            }
+            else
+            {
+                return View(u.GameLibrary.AsQueryable());
+            }
+            
+            
         }
 
     }

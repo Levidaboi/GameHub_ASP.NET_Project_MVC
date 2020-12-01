@@ -1,0 +1,65 @@
+﻿@using Models
+@model IEnumerable<Game>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Listing</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Games</h1><br />
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GameTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+             <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+
+                    <a href="/Home/DeleteUser?Id=@item.GameId">Delete</a>
+                    <br />
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Home/AddGame?@Model.ToList()[0].UserId">Add a new game</a>
+    <br />
+    <a href="/Home/Index">Back To Hub</a>
+</body>
+</html>
+
