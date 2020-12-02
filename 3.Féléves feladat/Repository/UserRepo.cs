@@ -54,11 +54,7 @@ namespace Repository
 
             olduser.Name = newitem.Name;
             olduser.Age = newitem.Age;
-            olduser.GameLibrary.Clear();
-            foreach (var item in newitem.GameLibrary)
-            {
-                olduser.GameLibrary.Add(item);
-            }
+            
             Save();
         }
 

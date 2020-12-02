@@ -1,0 +1,27 @@
+﻿@using Models
+@model User
+
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>Edit User</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>    Edit user</h1>
+    <form action="/Home/EditUser" method="post">
+        Name :
+        <input type="text" name="Name"   value="@Model.Name"/><br />
+        Age :
+        <input type="number" name="Age" value="@Model.Age" />
+        <br />
+        <input type="hidden" name="UserId" value="@Model.UserId" />
+        <input type="hidden" name="GameLibrary" value="@Model.GameLibrary" />
+        <input type="submit" value="Edit" />
+    </form>
+    
+</body>
+
+</html>

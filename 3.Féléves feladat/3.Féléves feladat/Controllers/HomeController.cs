@@ -100,6 +100,20 @@ namespace _3.Féléves_feladat.Controllers
             return View(userLogic.GetUsers()); ;
         }
 
+        public IActionResult EditUser(string id)
+        {
+
+            return View(userLogic.GetUser(id));
+        }
+
+         [HttpPost]
+        public IActionResult EditUser(User u)
+        {
+            userLogic.UpdateUser(u.UserId,u);
+
+
+            return View(nameof(ListUsers), userLogic.GetUsers());
+        }
 
 
 

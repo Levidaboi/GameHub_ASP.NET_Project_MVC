@@ -38,7 +38,8 @@
                         @Html.DisplayFor(modelItem => item.Age)
                     </td>-
                     <td>
-                        
+                        <a href="/Home/EditUser?Id=@item.UserId">Edit</a>
+                        <br />
                         <a href="/Home/DeleteUser?Id=@item.UserId">Delete</a> 
                         <br />  
                         <a href="/Home/ListGames?Id=@item.UserId">Show Game Library</a>
