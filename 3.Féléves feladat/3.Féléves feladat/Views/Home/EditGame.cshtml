@@ -1,0 +1,32 @@
+﻿@using Models
+@model Game
+
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>Edit Game </title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>   Edit Game</h1>
+    <form action="/Home/EditGame" method="post">
+        Name:
+        <input type="text" name="Name" value="@Model.Name" />
+        <input type="hidden" name="GameId" value="@Model.GameId" />
+        <input type="hidden" name="UserId" value="@Model.UserId" />
+        Genre:
+        <input type="text" name="Genre" value="@Model.Genre" /><br />
+        Game Time:
+        <input type="number" name="GameTime"  value="@Model.GameTime" /><br />
+        Rating :
+        <input type="number" name="Rating" value="@Model.Rating"   /><br />
+
+        <input type="submit" value="Edit game" />
+
+    </form>
+</body>
+
+</html>
+

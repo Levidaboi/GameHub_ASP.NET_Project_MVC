@@ -54,12 +54,7 @@ namespace Repository
             olditem.Genre = newitem.Genre;
             olditem.GameTime = newitem.GameTime;
             olditem.Rating = newitem.Rating;
-            olditem.Achievements.Clear();
-
-            foreach (var item in newitem.Achievements)
-            {
-                olditem.Achievements.Add(item);
-            }
+           
 
             Save();
         }

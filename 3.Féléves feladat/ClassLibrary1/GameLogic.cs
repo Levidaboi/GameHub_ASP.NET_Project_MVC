@@ -10,7 +10,7 @@ namespace Logic
     public class GameLogic
     {
         GameRepo gameRepo;
-
+        
         public GameLogic (GameRepo gameRepo)
         {
             this.gameRepo = gameRepo;
@@ -33,13 +33,14 @@ namespace Logic
         {
             return gameRepo.AllItem();
         }
+       
 
         public Game GetGame(string gameid)
         {
             return gameRepo.Read(gameid);
         }
 
-        public void UpdateTeam(string oldid, Game newitem)
+        public void UpdateGame(string oldid, Game newitem)
         {
             gameRepo.Update(oldid,newitem);
         }

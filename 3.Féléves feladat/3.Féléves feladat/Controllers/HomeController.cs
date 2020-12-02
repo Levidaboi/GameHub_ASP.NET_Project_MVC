@@ -186,6 +186,21 @@ namespace _3.Féléves_feladat.Controllers
             return View(nameof(ListGames), gameLogic.GetAllGames()) ;
         }
 
+        public IActionResult EditGame(string id)
+        {
+
+            return View(gameLogic.GetGame(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditGame(Game g)
+        {
+            gameLogic.UpdateGame(g.GameId,g);
+
+          
+            return View(nameof(ListGames), userLogic.GetUser(g.UserId).GameLibrary);
+        }
+
         //Achievement
 
         public IActionResult AddAchievement(string Id)
