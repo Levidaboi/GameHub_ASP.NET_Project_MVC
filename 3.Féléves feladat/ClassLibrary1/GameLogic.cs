@@ -45,5 +45,17 @@ namespace Logic
             gameRepo.Update(oldid,newitem);
         }
 
+        public int SumGameTime()
+        {
+            List<Game> games = gameRepo.AllItem().ToList();
+            int gameTimeSum = 0;
+            foreach (var game in games)
+            {
+                gameTimeSum += game.GameTime;
+            }
+
+            return gameTimeSum;
+        }
+
     }
 }

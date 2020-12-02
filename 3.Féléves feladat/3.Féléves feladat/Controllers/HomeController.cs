@@ -24,7 +24,8 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            
+            return View(gameLogic.SumGameTime());
         }
 
         public IActionResult GenerateData()
@@ -251,5 +252,19 @@ namespace _3.Féléves_feladat.Controllers
             
             return View(nameof(ListAchi), gameLogic.GetGame(a.GameId).Achievements);
         }
+
+
+        //Statisztika 
+
+        public IActionResult Statistics()
+        {
+
+
+
+            return View();
+        }
+
+
+
     }
 }
