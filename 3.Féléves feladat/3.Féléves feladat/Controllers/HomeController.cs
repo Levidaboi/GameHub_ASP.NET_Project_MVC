@@ -237,6 +237,19 @@ namespace _3.Féléves_feladat.Controllers
             return View(nameof(ListAchi), gameLogic.GetGame(a.GameId).Achievements);
         }
 
+        public IActionResult EditAchi(string id)
+        {
 
+            return View(achiLogic.GetAchievement(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditAchi(Achievement a)
+        {
+            achiLogic.UpdateAchi(a.AchiId, a);
+
+            
+            return View(nameof(ListAchi), gameLogic.GetGame(a.GameId).Achievements);
+        }
     }
 }

@@ -1,0 +1,30 @@
+﻿@using Models
+@model Achievement
+<!DOCTYPE html5>
+<html>
+<head>
+    <title>Edit Achi</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>    Edit Achievement</h1>
+    <form action="/Home/EditAchi" method="post">
+        Name :
+        <input type="text" name="Name" value="@Model.Name" /><br />
+        <input type="hidden" name="GameId" value="@Model.GameId" />
+        <input type="hidden" name="AchiId" value="@Model.AchiId" />
+        Achievent's Level: <br />
+        <input type="radio" id="bronze" name="achiLevel" value="bronze">
+        <label for="male">bronze</label><br>
+        <input type="radio" id="silver" name="achiLevel" value="silver">
+        <label for="female">silver</label><br>
+        <input type="radio" id="gold" name="achiLevel" value="gold">
+        <label for="other">gold</label>
+        <br />
+        <input type="submit" value="Add" />
+    </form>
+</body>
+
+</html>
