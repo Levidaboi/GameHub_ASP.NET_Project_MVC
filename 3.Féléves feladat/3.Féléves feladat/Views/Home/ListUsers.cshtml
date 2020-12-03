@@ -6,17 +6,19 @@
 <html>
 <head>
     <title>User Listing</title>
-    <style>
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="~/ListUsers.css" rel="stylesheet" />
+
 </head>
 
 <body>
-    <h1>Users</h1><br />    
+    <h1>Users</h1><br />
 
-    <table class="table">
+    <table class="table table-dark" >
         <thead>
             <tr>
-                
+
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
@@ -30,7 +32,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    
+
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -38,24 +40,29 @@
                         @Html.DisplayFor(modelItem => item.Age)
                     </td>-
                     <td>
-                        <a href="/Home/EditUser?Id=@item.UserId">Edit</a>
+
+                        <input type="button" class="button" onclick="location.href='/Home/EditUser?Id=@item.UserId';" value="Edit" />
                         <br />
-                        <a href="/Home/DeleteUser?Id=@item.UserId">Delete</a> 
-                        <br />  
-                        <a href="/Home/ListGames?Id=@item.UserId">Show Game Library</a>
+                        <input type="button" class="button" onclick="location.href='/Home/DeleteUser?Id=@item.UserId';" value="Delete" />
                         <br />
-                        <a href="/Home/AddGame?Id=@item.UserId">Add Game</a>
+                        <input type="button" class="button" onclick="location.href='/Home/ListGames?Id=@item.UserId';" value="Show Game Library" />
+                        <br />
+                        <input type="button" class="button" onclick="location.href='/Home/AddGame?Id=@item.UserId';" value="Add Game" />
 
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a href="/Home/AddUser">Add a new user</a>
-    <br />  
-    <a href="/Home/Index">Back To Hub</a>
-    <br />  
-    <a href="/Home/ListAllGames">All games</a>
+    <div class="center">
+        <input type="button" class="button" onclick="location.href='/Home/AddUser';" value="Add a new user" />
+        <br />
+        <input type="button" class="button" onclick="location.href='/Home/Index';" value="Back To Hub" />
+        <br />
+        <input type="button" class="button" onclick="location.href='/Home/ListAllGames';" value="All games" />
+    </div>
+   
+
 </body>
 
 </html>

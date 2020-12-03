@@ -3,36 +3,33 @@
 <html>
 <head>
     <title>HUB</title>
-    <style>
-        body {
-            background-color: #7678ed;
 
-        }
-
-
-        h1 {
-            text-align: center;
-            
-        }
-
-        
-
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="~/Index.css" rel="stylesheet" />
 </head>
 
 <body>
     <h1>Fáj a kukim</h1>
 
-    <h2>Games played for @Model hours</h2>
+    <h2 class="kuki">Games played for @Model hours </h2>
 
 
-    <a href="/Home/GenerateData">Generate Data</a><br />   
 
-    <a href="/Home/AddUser">Add New User</a>
-    <br />  
-    <a href="/Home/ListUsers">List Users</a>
-    <br />  
-    <a href="/Home/Statistics">Show statistics</a>
+    <div class="center">
+        <input type="button" class="btn btn-warning" onclick="location.href='/Home/GenerateData';" value="Generate Data" />
+        <br />
+        <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddUser';" value="Add New User" />
+        <br />
+        <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="List Users" />
+        <br />
+        <input type="button" class="btn btn-warning" onclick="location.href='/Home/Statistics';" value="Show statistics" />
+        <br />
+        
+    </div>
+
+   
+    
 
 
 </body>

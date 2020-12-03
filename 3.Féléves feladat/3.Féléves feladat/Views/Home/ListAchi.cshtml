@@ -38,20 +38,24 @@
                     </td>
 
                     <td>
-                        <a href="/Home/EditAchi?Id=@item.AchiId">Edit</a>
+
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/EditAchi?Id=@item.AchiId';" value="Edit" />
                         <br />
-                        <a href="/Home/DeleteAchi?Id=@item.AchiId">Delete</a>
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/DeleteAchi?Id=@item.AchiId';" value="Delete" />
+                        
 
                     </td>
                 </tr>
-            }
+             }
         </tbody>
     </table>
-    <a href="/Home/ListUsers">Back to the users</a>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
+
+    <br />
+
     <br />
     
-    <br />  
-    <a href="/Home/Index">Back To Hub</a>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/Index';" value="Back To Hub" />
 </body>
 </html>
 

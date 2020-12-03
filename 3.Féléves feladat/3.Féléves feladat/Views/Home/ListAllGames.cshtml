@@ -49,7 +49,8 @@
                     </td>
                     <td>
 
-                        <a href="/Home/DeleteGameFromAllGames?Id=@item.GameId">Delete</a>
+                        
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/DeleteGameFromAllGames?Id=@item.GameId';" value="Delete" />
                         <br />
 
                     </td>
@@ -57,9 +58,11 @@
             }
         </tbody>
     </table>
-    <a href="/Home/ListUsers">Back to the users</a>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
+
     <br />
-    <a href="/Home/Index">Back To Hub</a>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/Index';" value="Back To Hub" />
+    
 </body>
 </html>
 

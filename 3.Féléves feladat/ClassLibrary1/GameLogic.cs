@@ -11,6 +11,7 @@ namespace Logic
     {
         GameRepo gameRepo;
         
+        
         public GameLogic (GameRepo gameRepo)
         {
             this.gameRepo = gameRepo;
@@ -55,6 +56,29 @@ namespace Logic
             }
 
             return gameTimeSum;
+        }
+
+        public int GetAchiPoints(string GameId)
+        {
+            int achiPoints = 0;
+            Game g = GetGame(GameId);
+            foreach (var achi in g.Achievements)
+            {
+                if (achi.achiLevel == AchiLevel.bronze)
+                {
+                    achiPoints += 30;
+                }
+                else if (achi.achiLevel == AchiLevel.silver)
+                {
+                    achiPoints +=  20;
+                }
+                else
+                {
+                    achiPoints += 10;
+                }
+            }
+
+            return achiPoints;
         }
 
     }

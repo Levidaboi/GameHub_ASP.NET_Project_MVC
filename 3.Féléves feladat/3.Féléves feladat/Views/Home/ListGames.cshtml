@@ -34,36 +34,44 @@
         <tbody>
             @foreach (var item in Model)
             {
-             <tr>
+                <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GameTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    <a href="/Home/EditGame?Id=@item.GameId">Edit</a>
-                    <br />
-                    <a href="/Home/DeleteGame?Id=@item.GameId">Delete</a>
-                    <br />
-                    <a href="/Home/AddAchievement?Id=@item.GameId">Add Achievement</a>
-                    <br />
-                    <a href="/Home/ListAchi?Id=@item.GameId">Show Achievements</a>
-                </td>
-            </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/EditGame?Id=@item.GameId';" value="Edit" />
+                        <br />
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/DeleteGame?Id=@item.GameId';" value="Delete" />
+
+                        <br />
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddAchievement?Id=@item.GameId';" value="Add Achievement" />
+
+                        <br />
+                        <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAchi?Id=@item.GameId';" value="Show Achievements" />
+
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
-    <a href="/Home/ListUsers">Back to the users</a>
+
+    
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
+
     <br />
-    <a href="/Home/Index">Back To Hub</a>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/Index';" value="Back To Hub" />
+
 </body>
 </html>
 
