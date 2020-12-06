@@ -3,28 +3,32 @@
     <!DOCTYPE html5>
     <html>
     <head>
+        <link href="~/levihubfavocion.ico" rel="shortcut icon" type="image/x-icon" />
         <title>New user add</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link href="~/AddGame.css" rel="stylesheet" />
+        <link href="~/AddUser.css" rel="stylesheet" />
     </head>
 
     <body>
+          
         <h1>    Add a game</h1>
-        <form action="/Home/AddGame" method="post">
-            <p>Name:</p>
-            <input type="text" name="Name" />
-            <input type="hidden" name="UserId" value="@Model" /><br />
-            <p>Genre:  </p>
-            <input type="text" name="Genre" /><br />
-            <p>Game Time:  </p>
-            <input type="number" name="GameTime" /><br />
-            <p>Rating :    </p>
-            <input type="number" name="Rating" /><br />
+        <div class="formcss"> 
+            <form action="/Home/AddGame" method="post">
+                <p>Name:</p>
+                <input type="text" name="Name" />
+                <input type="hidden" name="UserId" value="@Model" /><br />
+                <p>Genre:  </p>
+                <input type="text" name="Genre" /><br />
+                <p>Game Time:  </p>
+                <input type="number" name="GameTime" /><br />
+                <p>Rating :    </p>
+                <input type="number" name="Rating" /><br />
 
-            <input type="submit" value="Add game" />
+                <input type="submit" value="Add game" />
 
-        </form>
+            </form>
+        </div>
         <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back" />
     </body>
 

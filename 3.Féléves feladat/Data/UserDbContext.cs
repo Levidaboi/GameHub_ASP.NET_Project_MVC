@@ -38,7 +38,8 @@ namespace Data
                 entity
                 .HasOne(Achievement => Achievement.Game)
                 .WithMany(Game => Game.Achievements)
-                .HasForeignKey(Achievement =>Achievement.GameId);
+                .HasForeignKey(Achievement =>Achievement.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
 
@@ -48,7 +49,8 @@ namespace Data
                 entity
                 .HasOne(Game => Game.User)
                 .WithMany(User => User.GameLibrary)
-                .HasForeignKey(Game => Game.UserId);
+                .HasForeignKey(Game => Game.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
         }
 

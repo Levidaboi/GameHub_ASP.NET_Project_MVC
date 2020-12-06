@@ -2,6 +2,7 @@
 @import "compass/css3";
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
 
+
 .rwd-table {
     margin: 1em 0;
     min-width: 300px;
@@ -12,6 +13,8 @@
    margin-left :30%;
   
 }
+
+
 
 
 .rwd-table tr {
@@ -106,4 +109,8 @@ h1 {
 .rwd-table th, .rwd-table td:before {
     color: #dd5;
 }
+
+body {
+    background: wheat;
+} 
  

@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>User Listing</title>
+    <link href="~/levihubfavocion.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="~/Statistics.css" rel="stylesheet" />
@@ -13,55 +14,55 @@
 
 <body>
     <h1>Users</h1><br />
-
-    <table class="rwd-table" >
-        <thead>
-            <tr>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Age)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-             {
+    <table class="rwd-table">
+            <thead>
                 <tr>
 
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.Age)
-                    </td>
-                    <td>
-
-                        <input type="button" class="btn btn-success" onclick="location.href='/Home/EditUser?Id=@item.UserId';" value="Edit" />
-                        <br />
-                        <input type="button" class="btn btn-danger" onclick="location.href='/Home/DeleteUser?Id=@item.UserId';" value="Delete" />
-                        <br />
-                        <input type="button" class="btn btn-info" onclick="location.href='/Home/ListGames?Id=@item.UserId';" value="Show Game Library" />
-                        <br />
-                        <input type="button" class="btn btn-primary" onclick="location.href='/Home/AddGame?Id=@item.UserId';" value="Add Game" />
-
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <th></th>
                 </tr>
-             }
-        </tbody>
-    </table>
-    <div class="center">
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddUser';" value="Add a new user" />
-        <br />
-        <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back To Hub" />
-        <br />
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAllGames';" value="All games" />
-    </div>
-   
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
 
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td>
+
+                            <input type="button" class="btn btn-success" onclick="location.href='/Home/EditUser?Id=@item.UserId';" value="Edit" />
+                            <br />
+                            <input type="button" class="btn btn-danger" onclick="location.href='/Home/DeleteUser?Id=@item.UserId';" value="Delete" />
+                            <br />
+                            <input type="button" class="btn btn-info" onclick="location.href='/Home/ListGames?Id=@item.UserId';" value="Show Game Library" />
+                            <br />
+                            <input type="button" class="btn btn-primary" onclick="location.href='/Home/AddGame?Id=@item.UserId';" value="Add Game" />
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+     </table>
+    
+      
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddUser';" value="Add a new user" />
+            <br />
+            <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back To Hub" />
+            <br />
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAllGames';" value="All games" />
+        </div>
+
+    </div>
 </body>
 
 </html>

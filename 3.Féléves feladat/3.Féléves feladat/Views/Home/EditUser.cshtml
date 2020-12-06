@@ -5,28 +5,31 @@
 <html>
 <head>
     <title>Edit User</title>
+    <link href="~/levihubfavocion.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="~/EditUser.css" rel="stylesheet" />
+    <link href="~/AddUser.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="Edit">
         <h1>    Edit user</h1>
-        <form action="/Home/EditUser" method="post">
-            <p> Name :</p>
+        <div class="formcss">
+            <form action="/Home/EditUser" method="post">
+                <p> Name :</p>
 
-            <input type="text" name="Name" value="@Model.Name" /><br />
-            <p>Age :</p>
+                <input type="text" name="Name" value="@Model.Name" /><br />
+                <p>Age :</p>
 
-            <input type="number" name="Age" value="@Model.Age" />
-            <br />
-            <input type="hidden" name="UserId" value="@Model.UserId" />
-            <input type="hidden" name="GameLibrary" value="@Model.GameLibrary" />
-            <input type="submit" value="Edit" />
-        </form>
+                <input type="number" name="Age" value="@Model.Age" />
+                <br />
+                <input type="hidden" name="UserId" value="@Model.UserId" />
+                <input type="hidden" name="GameLibrary" value="@Model.GameLibrary" />
+                <input type="submit" value="Edit" />
+            </form>
+        </div>
     </div>
-    
+
 </body>
 
 </html>

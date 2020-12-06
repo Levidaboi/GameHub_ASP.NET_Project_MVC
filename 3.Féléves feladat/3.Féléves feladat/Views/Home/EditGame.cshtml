@@ -5,29 +5,32 @@
 <html>
 <head>
     <title>Edit Game </title>
+    <link href="~/levihubfavocion.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="~/EditGame.css" rel="stylesheet" />
+    <link href="~/AddUser.css" rel="stylesheet" />
 </head>
 
 <body>
     <h1>   Edit Game</h1>
-    <form action="/Home/EditGame" method="post">
-       
-        <p> Name:</p>
-        <input type="text" name="Name" value="@Model.Name" />
-        <input type="hidden" name="GameId" value="@Model.GameId" />
-        <input type="hidden" name="UserId" value="@Model.UserId" />
-        <p>Genre:</p>     
-        <input type="text" name="Genre" value="@Model.Genre" /><br />
-        <p>Game Time:</p>
-        <input type="number" name="GameTime"  value="@Model.GameTime" /><br />
-        <p>Rating :</p>
-        <input type="number" name="Rating" value="@Model.Rating"   /><br />
+    <div class="formcss">
+        <form action="/Home/EditGame" method="post">
 
-        <input type="submit" value="Edit game" />
+            <p> Name:</p>
+            <input type="text" name="Name" value="@Model.Name" />
+            <input type="hidden" name="GameId" value="@Model.GameId" />
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <p>Genre:</p>
+            <input type="text" name="Genre" value="@Model.Genre" /><br />
+            <p>Game Time:</p>
+            <input type="number" name="GameTime" value="@Model.GameTime" /><br />
+            <p>Rating :</p>
+            <input type="number" name="Rating" value="@Model.Rating" /><br />
 
-    </form>
+            <input type="submit" value="Edit game" />
+
+        </form>
+    </div>
 </body>
 
 </html>

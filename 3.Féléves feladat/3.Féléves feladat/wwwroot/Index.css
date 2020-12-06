@@ -20,27 +20,16 @@ h1 {
     color: #ffb703;
 }
 
-h2 {
-    text-align: center;
-    color: #ffb703;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+
 
 .center {
-    /*margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);*/
+    
     border: 10px;
 }
 
 .btn-warning {
-    color: white;
-    
+    color: #023047;
     border-spacing: 10px;
-   
 }
 
 .indexgomb {
@@ -56,6 +45,12 @@ h2 {
    left: 16px;
 }
 
+h2 {
+    font-size: 50px;
+    text-align: center;
+    color: #ffb703;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 
 

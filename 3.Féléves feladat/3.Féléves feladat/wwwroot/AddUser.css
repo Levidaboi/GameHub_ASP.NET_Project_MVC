@@ -2,7 +2,25 @@
 
 body {
     background-color: #023047;
+    
 }
+
+.formcss {
+    position : absolute;
+
+    margin-left : 45%;
+    margin-top : 10%;
+  
+}
+
+.btn btn-warning {
+    
+    position: absolute;
+    top: 8px;
+    margin-left: 60px;
+    padding-left: 30px;
+}
+
 
 h1 {
     text-align: center;
