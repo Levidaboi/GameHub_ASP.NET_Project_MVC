@@ -1,9 +1,21 @@
 ﻿body {
     background-color: #023047;
-   
+    text-align : center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: center;
 }
 
+.container {
+    left :16%;
+    top : 30%;
+    justify-content : center;
+    position: absolute;
+}
+
+
 h1 {
+
     text-align: center;
     color: #ffb703;
 }
@@ -11,22 +23,38 @@ h1 {
 h2 {
     text-align: center;
     color: #ffb703;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .center {
-    margin: 0;
+    /*margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+    border: 10px;
 }
 
 .btn-warning {
     color: white;
+    
     border-spacing: 10px;
+   
 }
 
+.indexgomb {
+    padding-bottom : 20px;
+}
+
+.logo {
+
+   
+   max-width : 300px;
+   position: absolute;
+   top: 8px;
+   left: 16px;
+}
 
 
 

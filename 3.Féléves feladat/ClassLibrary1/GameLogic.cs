@@ -66,7 +66,7 @@ namespace Logic
             {
                 if (achi.achiLevel == AchiLevel.bronze)
                 {
-                    achiPoints += 30;
+                    achiPoints += 10;
                 }
                 else if (achi.achiLevel == AchiLevel.silver)
                 {
@@ -74,7 +74,7 @@ namespace Logic
                 }
                 else
                 {
-                    achiPoints += 10;
+                    achiPoints += 30;
                 }
             }
 

@@ -24,37 +24,25 @@ namespace _3.Féléves_feladat.Controllers
 
         public IActionResult Index()
         {
-            
-            return View(gameLogic.SumGameTime());
+             return View(gameLogic.SumGameTime());
         }
 
         public IActionResult Statistics()
         {
-            
             List<Stat> stats = new List<Stat>();
             foreach (var user in userLogic.GetUsers().ToList())
             {
                 Stat s = new Stat();
                 s.PlayerName = user.Name;
-                foreach (var game in user.GameLibrary)
-                {
-                    s.AchiPoints += gameLogic.GetAchiPoints(game.GameId);
-                    s.GameTime += game.GameTime;
-                    s.GameCount ++;
-                    
-                }
+                s.GameCount = userLogic.GetGameCount(user.UserId);
+                s.GameTime = userLogic.GetGameTime(user.UserId);
+                s.AchiPoints = userLogic.GetAchiPoints(user.UserId);
 
                 stats.Add(s);
             }
 
-
-            ;
             return View(stats);
         }
-
-
-
-
 
 
 
@@ -165,9 +153,7 @@ namespace _3.Féléves_feladat.Controllers
             g.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g);
 
-
             return View(nameof(ListGames), u.GameLibrary);
-
         }
 
 
@@ -223,6 +209,9 @@ namespace _3.Féléves_feladat.Controllers
             return View(gameLogic.GetGame(id));
         }
 
+
+
+
         [HttpPost]
         public IActionResult EditGame(Game g)
         {
@@ -258,6 +247,11 @@ namespace _3.Féléves_feladat.Controllers
             
             
             return View(nameof(ListAchi), gameLogic.GetGame(Id).Achievements);
+        }
+
+        public IActionResult ListAchievements()
+        {
+             return View(nameof(ListAchi),achiLogic.GetAchievements());
         }
 
 

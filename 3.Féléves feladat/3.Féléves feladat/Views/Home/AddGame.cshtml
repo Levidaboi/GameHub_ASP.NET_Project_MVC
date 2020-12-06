@@ -12,19 +12,20 @@
     <body>
         <h1>    Add a game</h1>
         <form action="/Home/AddGame" method="post">
-            Name:
+            <p>Name:</p>
             <input type="text" name="Name" />
             <input type="hidden" name="UserId" value="@Model" /><br />
-            Genre:
+            <p>Genre:  </p>
             <input type="text" name="Genre" /><br />
-            Game Time:
+            <p>Game Time:  </p>
             <input type="number" name="GameTime" /><br />
-            Rating :
+            <p>Rating :    </p>
             <input type="number" name="Rating" /><br />
 
             <input type="submit" value="Add game" />
 
         </form>
+        <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back" />
     </body>
 
 </html>

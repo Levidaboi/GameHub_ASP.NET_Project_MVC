@@ -12,11 +12,13 @@
 <body>
     <h1>    Edit Achievement</h1>
     <form action="/Home/EditAchi" method="post">
-        Name :
+       
+        <p>Name : </p>
+        
         <input type="text" name="Name" value="@Model.Name" /><br />
         <input type="hidden" name="GameId" value="@Model.GameId" />
         <input type="hidden" name="AchiId" value="@Model.AchiId" />
-        Achievent's Level: <br />
+        <p>Achievent's Level: </p>  <br />
         <input type="radio" id="bronze" name="achiLevel" value="bronze">
         <label for="male">bronze</label><br>
         <input type="radio" id="silver" name="achiLevel" value="silver">

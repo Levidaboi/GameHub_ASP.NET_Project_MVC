@@ -11,10 +11,11 @@
 <body>
     <h1>    Add new Achievement</h1>
     <form action="/Home/AddAchievement" method="post">
-        Name :
+        <p>Name :</p>
         <input type="text" name="Name" /><br />
         <input type="hidden" name="GameId" value="@Model" />
-        Achievent's Level: <br />    
+         <br /> 
+        <p>Achievent's Level:</p>   
         <input type="radio" id="bronze" name="achiLevel" value="bronze">
         <label for="male">bronze</label><br>
         <input type="radio" id="silver" name="achiLevel" value="silver">

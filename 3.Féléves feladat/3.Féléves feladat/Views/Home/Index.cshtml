@@ -10,26 +10,43 @@
 </head>
 
 <body>
-    <h1>Fáj a kukim</h1>
+    <h1>Meleg vagyok</h1>
 
-    <h2 class="kuki">Games played for @Model hours </h2>
+    <h2 class="font-italic">Games played for @Model hours </h2>
+
+    <a href="#"><img src="levihub.png" class="logo"  ></a>
 
 
-
-    <div class="center">
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/GenerateData';" value="Generate Data" />
+    <div class="container">
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/GenerateData';" value="Generate Data" />
+        </div>
         <br />
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddUser';" value="Add New User" />
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/AddUser';" value="Add New User" />
+        </div>
         <br />
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="List Users" />
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="List Users" />
+        </div>
         <br />
-        <input type="button" class="btn btn-warning" onclick="location.href='/Home/Statistics';" value="Show statistics" />
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAllGames';" value="List Games" />
+        </div>
         <br />
-        
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAchievements';" value="List Achievements" />
+        </div>
+        <br />
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/Statistics';" value="Show statistics" />
+        </div>
+        <br />
     </div>
 
-   
-    
+
+
+
 
 
 </body>

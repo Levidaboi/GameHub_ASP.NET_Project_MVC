@@ -13,48 +13,49 @@
 <body>
 
     <h1>Statistics</h1>
+    <div class="tabla">
+        <table class="rwd-table">
 
-    <table class="table">
-        <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.PlayerName)
+                    Username
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.GameCount)
+                    Games
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.GameTime)
+                    Hours Played
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.AchiPoints)
+                    Player Points
                 </th>
-                <th></th>
+
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PlayerName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GameCount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GameTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AchiPoints)
-                    </td>
 
-                </tr>
-            }
-        </tbody>
-    </table>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.PlayerName)
+                        </td>
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.GameCount)
+                        </td>
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.GameTime)
+                        </td>
+                        <td data-th="Movie Title">
+                            @Html.DisplayFor(modelItem => item.AchiPoints)
+                        </td>
 
-    <input type="button" class="btn btn-warning" onclick="location.href='/Home/Index';" value="Back" />
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back" />
 
 
 

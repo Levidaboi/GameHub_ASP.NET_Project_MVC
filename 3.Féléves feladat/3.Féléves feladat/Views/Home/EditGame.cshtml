@@ -13,15 +13,16 @@
 <body>
     <h1>   Edit Game</h1>
     <form action="/Home/EditGame" method="post">
-        Name:
+       
+        <p> Name:</p>
         <input type="text" name="Name" value="@Model.Name" />
         <input type="hidden" name="GameId" value="@Model.GameId" />
         <input type="hidden" name="UserId" value="@Model.UserId" />
-        Genre:
+        <p>Genre:</p>     
         <input type="text" name="Genre" value="@Model.Genre" /><br />
-        Game Time:
+        <p>Game Time:</p>
         <input type="number" name="GameTime"  value="@Model.GameTime" /><br />
-        Rating :
+        <p>Rating :</p>
         <input type="number" name="Rating" value="@Model.Rating"   /><br />
 
         <input type="submit" value="Edit game" />
