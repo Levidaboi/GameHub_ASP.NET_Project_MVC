@@ -9,12 +9,17 @@ namespace Logic
 {
     public class UserLogic
     {
-        UserRepo userrepo;
+        IRepo<User> userrepo;
         GameRepo gameRepo;
         GameLogic gameLogic;
         AchievementRepo AchievementRepo;
 
-        public UserLogic(UserRepo userrepo , GameLogic gameLogic, GameRepo gameRepo, AchievementRepo AchievementRepo)
+        public UserLogic(IRepo<User> ur)
+        {
+            this.userrepo = ur;
+        }
+
+        public UserLogic(IRepo<User> userrepo , GameLogic gameLogic, GameRepo gameRepo, AchievementRepo AchievementRepo)
         {
             this.userrepo = userrepo;
             this.gameLogic = gameLogic;
@@ -92,7 +97,6 @@ namespace Logic
                      group x by x.Name into g
                      select new
                      {
-
                          Name = g.Key,
                          points = g.SelectMany(x => x.GameLibrary).SelectMany(y => y.Achievements).Sum(z => (int)z.achiLevel)
                      }).OrderByDescending(x => x.points).FirstOrDefault();

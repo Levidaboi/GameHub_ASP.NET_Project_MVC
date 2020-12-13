@@ -9,9 +9,9 @@ namespace Logic
 {
     public class AchiLogic
     {
-        AchievementRepo achiRepo;
+        IRepo<Achievement> achiRepo;
 
-        public AchiLogic(AchievementRepo achiRepo)
+        public AchiLogic(IRepo<Achievement> achiRepo)
         {
             this.achiRepo = achiRepo;
         }
@@ -19,6 +19,7 @@ namespace Logic
         public void AddAchi(Achievement a)
         {
             achiRepo.Add(a);
+           
         }
 
         public void DeleteAchi(Achievement a)

@@ -9,10 +9,10 @@ namespace Logic
 {
     public class GameLogic
     {
-        GameRepo gameRepo;
+        IRepo<Game> gameRepo;
         
         
-        public GameLogic (GameRepo gameRepo)
+        public GameLogic (IRepo<Game> gameRepo)
         {
             this.gameRepo = gameRepo;
         }
