@@ -8,7 +8,7 @@ namespace Models
 {
     public enum AchiLevel
     {
-        bronze , silver , gold    
+        bronze = 10 , silver  = 20 , gold = 30    
     }
     public class Achievement
     {

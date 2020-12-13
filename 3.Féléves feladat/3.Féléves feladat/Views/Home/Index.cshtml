@@ -13,9 +13,9 @@
     
 
     <h2 class="font-italic">Games played for @Model hours </h2>
-
-    <a href="#"><img src="levihub.png" class="logo"  ></a>
-
+    <div class="block">
+        <a href="#"><img src="levihub.png" class="logo"></a>
+    </div>
 
     <div class="container">
         <div class="indexgomb">
@@ -39,7 +39,10 @@
         </div>
         <br />
         <div class="indexgomb">
-            <input type="button" class="btn btn-warning" onclick="location.href='/Home/Statistics';" value="Show statistics" />
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/Statistics';" value="Show statistics for all players" />
+        </div>
+        <div class="indexgomb">
+            <input type="button" class="btn btn-warning" onclick="location.href='/Home/SpecificStats';" value="Show statistics " />
         </div>
         <br />
     </div>

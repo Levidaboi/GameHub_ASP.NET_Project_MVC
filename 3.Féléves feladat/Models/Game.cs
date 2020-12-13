@@ -15,6 +15,8 @@ namespace Models
         public string Genre { get; set; }
         public int GameTime { get; set; }
 
+        public string PlayerName { get; set; }
+
 
         [Range(0.0,10.0)]
         public int Rating { get; set; }

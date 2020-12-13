@@ -30,6 +30,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Rating)
                 </th>
+                <th>
+                    Player Name
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -49,7 +52,9 @@
                     <td data-th="Movie Title">
                         @Html.DisplayFor(modelItem => item.Rating)
                     </td>
-                    
+                    <td data-th="Movie Title">
+                        @Html.DisplayFor(modelItem => item.PlayerName)
+                    </td>
                 </tr>
             }
         </tbody>

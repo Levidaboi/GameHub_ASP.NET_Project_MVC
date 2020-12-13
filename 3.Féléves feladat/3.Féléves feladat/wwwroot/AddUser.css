@@ -13,18 +13,26 @@ body {
   
 }
 
+
+    .formcss p {
+        color: #ffb703;
+        font-size: 30px;
+        font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
 .btn btn-warning {
-    
     position: absolute;
     top: 8px;
-    margin-left: 60px;
+    left: 60px;
     padding-left: 30px;
+    color: #023047;
 }
 
 
 h1 {
     text-align: center;
     color: #ffb703;
+    font-size : 50px;
 }
 
 h2 {
@@ -45,6 +53,9 @@ table {
     transform: translate(-50%, -50%);
 }
 
-p {
+
+
+/*p {
     color: #ffb703;
-}
+    font-size :inherit 40px;
+}*/
