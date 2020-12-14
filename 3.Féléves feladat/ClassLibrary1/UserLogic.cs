@@ -10,36 +10,31 @@ namespace Logic
     public class UserLogic
     {
         IRepo<User> userrepo;
-<<<<<<< HEAD
+
         IRepo<Game> gameRepo;
-=======
-        GameRepo gameRepo;
->>>>>>> 09da38a31b159e65db16033487fa64937466ae29
+
         GameLogic gameLogic;
+
         IRepo<Achievement> AchievementRepo;
 
-<<<<<<< HEAD
+
         public UserLogic(IRepo<User> userrepo)
         {
             this.userrepo = userrepo;
         }
-        
-        public UserLogic(IRepo<User> userrepo , GameLogic gameLogic, IRepo<Game> gameRepo,IRepo<Achievement> AchievementRepo)
-=======
-        public UserLogic(IRepo<User> ur)
-        {
-            this.userrepo = ur;
-        }
 
-        public UserLogic(IRepo<User> userrepo , GameLogic gameLogic, GameRepo gameRepo, AchievementRepo AchievementRepo)
->>>>>>> 09da38a31b159e65db16033487fa64937466ae29
+        public UserLogic(IRepo<User> userrepo, GameLogic gameLogic, IRepo<Game> gameRepo, IRepo<Achievement> AchievementRepo)
         {
-            this.userrepo = userrepo;
-            this.gameLogic = gameLogic;
-            this.gameRepo = gameRepo;
             this.AchievementRepo = AchievementRepo;
-
+            this.gameRepo = gameRepo;
+            this.gameLogic = gameLogic;
+            this.userrepo = userrepo;
+        
         }
+
+        
+
+        
 
         public void AddNewUser(User u)
         {
