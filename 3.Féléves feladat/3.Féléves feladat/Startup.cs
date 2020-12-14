@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Logic;
 using Repository;
+using Models;
 
 
 namespace _3.Féléves_feladat
@@ -19,12 +20,12 @@ namespace _3.Féléves_feladat
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<UserRepo, UserRepo>();
+            services.AddTransient<IRepo<User>, UserRepo>();
             services.AddTransient<UserLogic,UserLogic>();
             services.AddTransient<GameLogic, GameLogic>();
-            services.AddTransient<GameRepo, GameRepo>();
+            services.AddTransient<IRepo<Game>, GameRepo>();
             services.AddTransient<AchiLogic, AchiLogic>();
-            services.AddTransient<AchievementRepo, AchievementRepo>();
+            services.AddTransient<IRepo<Achievement>, AchievementRepo>();
 
             services.AddMvc(opt => opt.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 

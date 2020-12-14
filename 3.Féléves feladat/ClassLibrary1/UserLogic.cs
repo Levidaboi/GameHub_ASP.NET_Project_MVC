@@ -9,12 +9,17 @@ namespace Logic
 {
     public class UserLogic
     {
-        UserRepo userrepo;
-        GameRepo gameRepo;
+        IRepo<User> userrepo;
+        IRepo<Game> gameRepo;
         GameLogic gameLogic;
-        AchievementRepo AchievementRepo;
+        IRepo<Achievement> AchievementRepo;
 
-        public UserLogic(UserRepo userrepo , GameLogic gameLogic, GameRepo gameRepo, AchievementRepo AchievementRepo)
+        public UserLogic(IRepo<User> userrepo)
+        {
+            this.userrepo = userrepo;
+        }
+        
+        public UserLogic(IRepo<User> userrepo , GameLogic gameLogic, IRepo<Game> gameRepo,IRepo<Achievement> AchievementRepo)
         {
             this.userrepo = userrepo;
             this.gameLogic = gameLogic;
