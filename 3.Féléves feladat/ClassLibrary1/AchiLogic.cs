@@ -19,6 +19,7 @@ namespace Logic
         public void AddAchi(Achievement a)
         {
             achiRepo.Add(a);
+           
         }
 
         public void DeleteAchi(Achievement a)
