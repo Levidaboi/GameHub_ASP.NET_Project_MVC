@@ -11,7 +11,7 @@ namespace TestLib
 {
 
     [TestFixture]
-    public class Test
+    public class Testlib
     {
         [Test]
         public void GetAllUsers()
