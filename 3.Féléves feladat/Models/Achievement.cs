@@ -22,5 +22,27 @@ namespace Models
         [NotMapped]
         public virtual Game Game { get; set; }
 
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Achievement)
+            {
+                Achievement u = obj as Achievement;
+                return this.AchiId == u.AchiId && this.Name == u.Name &&
+                    this.achiLevel == u.achiLevel && this.GameId == u.GameId
+                    && this.Game == u.Game;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
     }
 }

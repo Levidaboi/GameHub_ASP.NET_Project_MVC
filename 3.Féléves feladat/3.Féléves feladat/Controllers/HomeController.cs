@@ -75,7 +75,7 @@ namespace _3.Féléves_feladat.Controllers
             g9.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g9);
 
-            Achievement a = new Achievement() { Name = "Kitoltad ", achiLevel = AchiLevel.gold, GameId = g.GameId };
+            Achievement a = new Achievement() { Name = "Kitoltad", achiLevel = AchiLevel.gold, GameId = g.GameId };
             a.AchiId = Guid.NewGuid().ToString();
             achiLogic.AddAchi(a);
 
@@ -109,7 +109,7 @@ namespace _3.Féléves_feladat.Controllers
             g3.GameId = Guid.NewGuid().ToString();
             gameLogic.AddGame(g3);
 
-            Achievement a3 = new Achievement() { Name = "Semmit Nem csinaltal ", achiLevel = AchiLevel.bronze, GameId = g2.GameId };
+            Achievement a3 = new Achievement() { Name = "Semmit Nem csinaltal", achiLevel = AchiLevel.bronze, GameId = g2.GameId };
             a3.AchiId = Guid.NewGuid().ToString();
             achiLogic.AddAchi(a3);
 

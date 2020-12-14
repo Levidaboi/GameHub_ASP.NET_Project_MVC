@@ -94,59 +94,101 @@ namespace TestLib
         }
 
 
-        //public UserLogic GetTestLogic()
-        //{
-        //    Mock<IRepo<Game>> gmock = new Mock<IRepo<Game>>(MockBehavior.Loose);
-        //    Mock<IRepo<Achievement>> amock = new Mock<IRepo<Achievement>>(MockBehavior.Loose);
-        //    Mock<IRepo<User>> umock = new Mock<IRepo<User>>(MockBehavior.Loose);
+        public UserLogic GetTestLogic()
+        {
+            Mock<IRepo<Game>> gmock = new Mock<IRepo<Game>>(MockBehavior.Loose);
+            Mock<IRepo<Achievement>> amock = new Mock<IRepo<Achievement>>(MockBehavior.Loose);
+            Mock<IRepo<User>> umock = new Mock<IRepo<User>>(MockBehavior.Loose);
+
+            List<Achievement> achiList = new List<Achievement>()
+            {
+                new Achievement { Name = "achi1" , AchiId = "aaa111" , GameId = "ggg555" , achiLevel = AchiLevel.gold},
+                new Achievement { Name = "achi2" , AchiId = "aaa222" , GameId = "ggg444" , achiLevel = AchiLevel.silver },
+                new Achievement { Name = "achi3" , AchiId = "aaa333" , GameId = "ggg111" , achiLevel = AchiLevel.bronze },
+                new Achievement { Name = "achi4" , AchiId = "aaa444" , GameId = "ggg222" , achiLevel = AchiLevel.bronze },
+                new Achievement { Name = "achi5" , AchiId = "aaa555" , GameId = "ggg333" , achiLevel = AchiLevel.gold }
 
 
-        //    List<User>userList = new List<User>()
-        //    {
-        //        new User { Name = "Viperov" , UserId = "uuu111" },
-        //        new User { Name = "Pleb" , UserId = "uuu222" },
-        //        new User { Name = "Rachman" , UserId = "uuu333" }
+            };
 
-        //    };
-
-
-        //    List<Game> gameList = new List<Game>()
-        //    {
-        //        new Game { Name = "game1" , UserId = "uuu111" ,GameId = "ggg111" ,GameTime = 40},
-        //        new Game { Name = "game2" , UserId = "uuu222" , GameId = "ggg222" , GameTime = 2},
-        //        new Game { Name = "game3" , UserId = "uuu333" ,  GameId = "ggg333" , GameTime = 1},
-        //        new Game { Name = "game3" , UserId = "uuu333" , GameId = "ggg444" , GameTime = 1 },
-        //        new Game { Name = "game3" , UserId = "uuu333" , GameId = "ggg555" , GameTime =2 }
-
-        //    };
-
-        //    List<Achievement> achiList = new List<Achievement>()
-        //    {
-        //        new Achievement { Name = "achi1" , AchiId = "aaa111" , GameId = "ggg222" , achiLevel = AchiLevel.gold},
-        //        new Achievement { Name = "achi2" , AchiId = "aaa222" , GameId = "ggg444" , achiLevel = AchiLevel.silver },
-        //        new Achievement { Name = "achi3" , AchiId = "aaa333" , GameId = "ggg222" , achiLevel = AchiLevel.bronze }
-                
-
-        //    };
-
-
-        //    umock.Setup(x => x.AllItem()).Returns(userList.AsQueryable());
-        //    gmock.Setup(x => x.AllItem()).Returns(gameList.AsQueryable());
-        //    amock.Setup(x => x.AllItem()).Returns(achiList.AsQueryable());
+            List<Game> gameList = new List<Game>()
+            {
+                new Game { Name = "game1", UserId = "uuu111", GameId = "ggg111", GameTime = 40 , Rating = 1 , Achievements = new Achievement[] {achiList[2] }  },
+                new Game { Name = "game2", UserId = "uuu222", GameId = "ggg222", GameTime = 2 , Rating = 5, Achievements = new Achievement[]{ achiList[3] } },
+                new Game { Name = "game3", UserId = "uuu333", GameId = "ggg333", GameTime = 1 , Rating = 2, Achievements = new Achievement[]{achiList[4]  } },
+                new Game { Name = "game4", UserId = "uuu333", GameId = "ggg444", GameTime = 1 , Rating = 2 , Achievements = new Achievement[]{achiList[1] } },
+                new Game { Name = "game5", UserId = "uuu333", GameId = "ggg555", GameTime = 2 , Rating = 3, Achievements = new Achievement[]{ achiList[0]} }
+            };
+           
 
 
 
-        //    return new UserLogic(umock.Object, gmock.Object, amock.Object);
+            
 
-        //}
 
+            List<User> userList = new List<User>()
+            {
+                new User { Name = "Viperov" , UserId = "uuu111" , GameLibrary = new Game[]{ gameList[0] } },
+                new User { Name = "Pleb" , UserId = "uuu222" , GameLibrary = new Game[]{ gameList[1] }   } ,
+                new User { Name = "Rachman" , UserId = "uuu333" , GameLibrary = new Game[] { gameList[2], gameList[3], gameList[4] } }
+
+            };
+
+
+             umock.Setup(x => x.AllItem()).Returns(userList.AsQueryable());
+             gmock.Setup(x => x.AllItem()).Returns(gameList.AsQueryable());
+             amock.Setup(x => x.AllItem()).Returns(achiList.AsQueryable());
+
+
+
+            return new UserLogic(umock.Object, gmock.Object, amock.Object);
+
+        }
+
+
+
+         [Test]
+        public void GetBestGamer()
+        {
+            UserLogic ul = GetTestLogic();
+
+            string expectedGamer = "Rachman";
+            string gotGamer = ul.GetBestGamer();
+
+            Assert.That(expectedGamer,Is.EqualTo(gotGamer));
+
+        }
 
 
         [Test]
-        public void GetGameCount()
+        public void GetLifelessGamer()
         {
+            UserLogic ul = GetTestLogic();
+
+            string expectedGamer = "Viperov";
+            string gotGamer = ul.GetLifelessGamer();
+
+            Assert.That(expectedGamer,Is.EqualTo(gotGamer));
 
         }
+
+
+        [Test]
+        public void GetPickiestGamer()
+        {
+            UserLogic ul = GetTestLogic();
+
+            string expectedGamer = "Pleb";
+            string gotGamer = ul.GetPickiestGamer();
+
+            Assert.That(expectedGamer, Is.EqualTo(gotGamer));
+
+        }
+
+
+
+
+
 
 
     }

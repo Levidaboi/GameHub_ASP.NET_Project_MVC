@@ -18,6 +18,14 @@ namespace Logic
         IRepo<Achievement> AchievementRepo;
 
 
+        public UserLogic(IRepo<User> userrepo, IRepo<Game> gameRepo, IRepo<Achievement> AchievementRepo)
+        {
+            this.AchievementRepo = AchievementRepo;
+            this.gameRepo = gameRepo;
+            this.userrepo = userrepo;
+
+        }
+
         public UserLogic(IRepo<User> userrepo)
         {
             this.userrepo = userrepo;
@@ -101,17 +109,17 @@ namespace Logic
         {
             var q = (from x in userrepo.AllItem().ToList()
                      join y in gameRepo.AllItem().ToList() on x.UserId equals y.UserId
-                     join z in gameRepo.AllItem().ToList() on y.GameId equals z.GameId
+                     join z in AchievementRepo.AllItem().ToList() on y.GameId equals z.GameId
                      group x by x.Name into g
                      select new
                      {
                          Name = g.Key,
-                         points = g.SelectMany(x => x.GameLibrary).SelectMany(y => y.Achievements).Sum(z => (int)z.achiLevel)
+                         points = g.SelectMany(x => x.GameLibrary).SelectMany(y => y.Achievements).Distinct().Sum(z => (int)z.achiLevel)
                      }).OrderByDescending(x => x.points).FirstOrDefault();
-                        
 
 
-           return q.Name;
+            
+            return q.Name;
 
 
         }
@@ -124,14 +132,31 @@ namespace Logic
                      select new
                      {
                          name = g.Key,
-                         time = g.SelectMany(x => x.GameLibrary).Sum(y => y.GameTime)
+                         time = g.SelectMany(x => x.GameLibrary).Distinct().Sum(y => y.GameTime)
 
                      }).OrderByDescending(x => x.time).FirstOrDefault();
-
+            
 
             return q.name;
 
         }
+
+        public string GetPickiestGamer()
+        { 
+            var q = (from x in userrepo.AllItem().ToList()
+                     join y in gameRepo.AllItem().ToList() on x.UserId equals y.UserId
+                     group x by x.Name into g
+                     select new
+                     {
+                         name = g.Key,
+                         avg = g.SelectMany(x => x.GameLibrary).Distinct().Average(y => y.Rating)
+
+                     }).OrderByDescending(x => x.avg).FirstOrDefault();
+
+            return q.name;
+        }
+
+
 
 
         public string GetRichestGamer()

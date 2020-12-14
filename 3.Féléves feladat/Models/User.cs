@@ -16,6 +16,27 @@ namespace Models
         
         public virtual ICollection<Game> GameLibrary { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is User)
+            {
+                User u = obj as User;
+                return this.UserId == u.UserId && this.Name == u.Name &&
+                    this.Age == u.Age && this.GameLibrary == u.GameLibrary ;
+                
+            }
+            else
+            {
+                return false;
+            }
+            
+            
+        }
+
+        public override int GetHashCode()
+        {
+            return  0;
+        }
 
     }
 }

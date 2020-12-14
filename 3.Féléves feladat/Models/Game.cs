@@ -27,5 +27,32 @@ namespace Models
         public virtual User User { get; set; }
         public virtual ICollection<Achievement> Achievements { get; set; }
 
+
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Game)
+            {
+                Game u = obj as Game;
+                return this.UserId == u.UserId && this.Name == u.Name &&
+                    this.Genre == u.Genre && this.Achievements == u.Achievements
+                    && this.GameTime == u.GameTime && this.GameId == u.GameId &&
+                    this.Rating == u.Rating;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+
     }
+
+    
 }
