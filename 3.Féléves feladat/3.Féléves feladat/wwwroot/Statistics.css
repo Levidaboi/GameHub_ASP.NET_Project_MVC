@@ -9,9 +9,11 @@
     
 }
 .tabla {
-   position: absolute;
-   margin-left :30%;
-  
+   
+   
+   display : flex;
+   justify-content: center;
+   align-items : center;
 }
 
 

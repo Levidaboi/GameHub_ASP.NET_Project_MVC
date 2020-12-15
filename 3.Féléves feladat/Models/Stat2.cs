@@ -12,5 +12,7 @@ namespace Models
 
         public string  LifelessGamer { get; set; }
 
+        public string PickiestGamer { get; set; }
+
     }
 }

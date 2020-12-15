@@ -94,11 +94,16 @@ namespace TestLib
         }
 
 
+
+        Mock<IRepo<Game>> gmock;
+        Mock<IRepo<Achievement>> amock;
+        Mock<IRepo<User>> umock;
+
         public UserLogic GetTestLogic()
         {
-            Mock<IRepo<Game>> gmock = new Mock<IRepo<Game>>(MockBehavior.Loose);
-            Mock<IRepo<Achievement>> amock = new Mock<IRepo<Achievement>>(MockBehavior.Loose);
-            Mock<IRepo<User>> umock = new Mock<IRepo<User>>(MockBehavior.Loose);
+            gmock = new Mock<IRepo<Game>>(MockBehavior.Loose);
+            amock = new Mock<IRepo<Achievement>>(MockBehavior.Loose);
+            umock = new Mock<IRepo<User>>(MockBehavior.Loose);
 
             List<Achievement> achiList = new List<Achievement>()
             {
@@ -120,12 +125,6 @@ namespace TestLib
                 new Game { Name = "game5", UserId = "uuu333", GameId = "ggg555", GameTime = 2 , Rating = 3, Achievements = new Achievement[]{ achiList[0]} }
             };
            
-
-
-
-            
-
-
             List<User> userList = new List<User>()
             {
                 new User { Name = "Viperov" , UserId = "uuu111" , GameLibrary = new Game[]{ gameList[0] } },
@@ -156,7 +155,9 @@ namespace TestLib
             string gotGamer = ul.GetBestGamer();
 
             Assert.That(expectedGamer,Is.EqualTo(gotGamer));
-
+            umock.Verify(x => x.AllItem(),Times.Once);
+            gmock.Verify(x => x.AllItem(), Times.Once);
+            amock.Verify(x => x.AllItem(), Times.Once);
         }
 
 
@@ -169,6 +170,9 @@ namespace TestLib
             string gotGamer = ul.GetLifelessGamer();
 
             Assert.That(expectedGamer,Is.EqualTo(gotGamer));
+            umock.Verify(x => x.AllItem(), Times.Once);
+            gmock.Verify(x => x.AllItem(), Times.Once);
+            amock.Verify(x => x.AllItem(), Times.Never);
 
         }
 
@@ -182,7 +186,9 @@ namespace TestLib
             string gotGamer = ul.GetPickiestGamer();
 
             Assert.That(expectedGamer, Is.EqualTo(gotGamer));
-
+            umock.Verify(x => x.AllItem(), Times.Once);
+            gmock.Verify(x => x.AllItem(), Times.Once);
+            amock.Verify(x => x.AllItem(), Times.Never);
         }
 
 

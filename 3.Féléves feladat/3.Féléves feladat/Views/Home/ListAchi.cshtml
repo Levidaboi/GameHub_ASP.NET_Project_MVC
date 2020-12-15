@@ -13,51 +13,57 @@
 
 <body>
     <h1>Achievements</h1><br />
+                         <div class="tabla">
+                             <table class="rwd-table">
+                                 <thead>
+                                     <tr>
 
-    <table class="rwd-table">
-        <thead>
-            <tr>
+                                         <th>
+                                             @Html.DisplayNameFor(model => model.Name)
+                                         </th>
+                                         <th>
+                                             @Html.DisplayNameFor(model => model.achiLevel)
+                                         </th>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.achiLevel)
-                </th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     @foreach (var item in Model)
+                                     {
+                                         <tr>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
+                                             <td data-th="Movie Title">
+                                                 @Html.DisplayFor(modelItem => item.Name)
+                                             </td>
+                                             <td data-th="Movie Title">
+                                                 @Html.DisplayFor(modelItem => item.achiLevel)
+                                             </td>
 
-                    <td data-th="Movie Title" >
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.achiLevel)
-                    </td>
+                                             <td data-th="Movie Title">
 
-                    <td data-th="Movie Title">
+                                                 <input type="button" class="btn btn-success" onclick="location.href='/Home/EditAchi?Id=@item.AchiId';" value="Edit" />
+                                                 <br />
+                                                 <input type="button" class="btn btn-danger" onclick="location.href='/Home/DeleteAchi?Id=@item.AchiId';" value="Delete" />
 
-                        <input type="button" class="btn btn-success" onclick="location.href='/Home/EditAchi?Id=@item.AchiId';" value="Edit" />
-                        <br />
-                        <input type="button" class="btn btn-danger" onclick="location.href='/Home/DeleteAchi?Id=@item.AchiId';" value="Delete" />
-                        
 
-                    </td>
-                </tr>
-             }
-        </tbody>
-    </table>
-    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
+                                             </td>
+                                         </tr>
+                                     }
+                                 </tbody>
 
-    <br />
+                             </table>
+                         </div>
+        <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
 
-    <br />
+
+
+
+
+        <br />
+
+        <br />
     
-    <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back To Hub" />
+        <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back To Hub" />
 </body>
 </html>
 

@@ -22,16 +22,17 @@
             <input type="hidden" name="AchiId" value="@Model.AchiId" />
             <p>Achievent's Level: </p>  <br />
             <input type="radio" id="bronze" name="achiLevel" value="bronze">
-            <label for="male">bronze</label><br>
+            <label for="male" style="color: #ffb703">bronze</label><br>
             <input type="radio" id="silver" name="achiLevel" value="silver">
-            <label for="female">silver</label><br>
+            <label for="female" style="color: #ffb703">silver</label><br>
             <input type="radio" id="gold" name="achiLevel" value="gold">
-            <label for="other">gold</label>
+            <label for="other" style="color: #ffb703">gold</label>
             <br />
-            <br />  
+            <br />
             <input type="submit" value="Add" />
         </form>
     </div>
+    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListAchievements';" value="Back" />
 </body>
 
 </html>

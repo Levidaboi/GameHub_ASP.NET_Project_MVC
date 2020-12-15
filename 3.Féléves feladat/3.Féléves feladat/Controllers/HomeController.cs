@@ -54,7 +54,7 @@ namespace _3.Féléves_feladat.Controllers
             stat.BestGamer = userLogic.GetBestGamer();
             stat.LifelessGamer = userLogic.GetLifelessGamer();
             stat.RichestGamer = userLogic.GetRichestGamer();
-
+            stat.PickiestGamer = userLogic.GetPickiestGamer();
 
             return View(stat);
         }

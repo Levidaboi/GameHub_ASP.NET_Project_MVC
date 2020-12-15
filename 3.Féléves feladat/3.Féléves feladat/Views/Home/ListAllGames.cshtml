@@ -13,52 +13,53 @@
 
 <body>
     <h1>Games</h1><br />
+                  <div class="tabla">
+                      <table class="rwd-table">
+                          <thead>
+                              <tr>
 
-    <table class="rwd-table">
-        <thead>
-            <tr>
+                                  <th>
+                                      @Html.DisplayNameFor(model => model.Name)
+                                  </th>
+                                  <th>
+                                      @Html.DisplayNameFor(model => model.Genre)
+                                  </th>
+                                  <th>
+                                      @Html.DisplayNameFor(model => model.GameTime)
+                                  </th>
+                                  <th>
+                                      @Html.DisplayNameFor(model => model.Rating)
+                                  </th>
+                                  <th>
+                                      Player Name
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach (var item in Model)
+                              {
+                                  <tr>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Genre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.GameTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Rating)
-                </th>
-                <th>
-                    Player Name
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.Genre)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.GameTime)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.Rating)
-                    </td>
-                    <td data-th="Movie Title">
-                        @Html.DisplayFor(modelItem => item.PlayerName)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                                      <td data-th="Movie Title">
+                                          @Html.DisplayFor(modelItem => item.Name)
+                                      </td>
+                                      <td data-th="Movie Title">
+                                          @Html.DisplayFor(modelItem => item.Genre)
+                                      </td>
+                                      <td data-th="Movie Title">
+                                          @Html.DisplayFor(modelItem => item.GameTime)
+                                      </td>
+                                      <td data-th="Movie Title">
+                                          @Html.DisplayFor(modelItem => item.Rating)
+                                      </td>
+                                      <td data-th="Movie Title">
+                                          @Html.DisplayFor(modelItem => item.PlayerName)
+                                      </td>
+                                  </tr>
+                              }
+                          </tbody>
+                      </table>
+                  </div>
     <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back to the users" />
 
     <br />
