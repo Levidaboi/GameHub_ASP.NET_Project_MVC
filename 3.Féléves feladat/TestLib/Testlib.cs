@@ -147,7 +147,8 @@ namespace TestLib
 
 
          [Test]
-        public void GetBestGamer()
+        
+public void GetBestGamer()
         {
             UserLogic ul = GetTestLogic();
 
@@ -159,7 +160,6 @@ namespace TestLib
             gmock.Verify(x => x.AllItem(), Times.Once);
             amock.Verify(x => x.AllItem(), Times.Once);
         }
-
 
         [Test]
         public void GetLifelessGamer()
