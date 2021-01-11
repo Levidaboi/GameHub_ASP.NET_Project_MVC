@@ -12,7 +12,7 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 
 ## A projekthez használt nyelvek
 
-- ASP.NET CORE WEP APP (C#)
+- ASP.NET  (C#)
 - HTML
 - CSS
 - JAVASCRIPT
@@ -30,7 +30,9 @@ A projekt egy rétegzett alkalmazás, ezek a rétegek :
 3. Repository 
    - A `Data` és a `Logic` réteg között biztosít kapcsolatot , ebben az esetben a 3 fő modellhez tartozó **CRUD** metódusok szerepelnek itt
 4. Logic 
-   -  
+   -  A `Repository` réteget felhasználva megvalósítja a **CRUD** és **NON-CRUD** metódusokat
+5. GameHubProjekt
+   - Maga a .Net Core Web Applikáció , ez tartalmazza a controllert (hiszen MVC tervezési mintát használunk) , a megjelenítéshez szükséges `HTML` oldalakat és a hozzájuk tartozó stylesheeteket és képeket 
 
 
 
