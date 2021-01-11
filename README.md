@@ -2,12 +2,13 @@
 <br/>
 <br/>
 ##  Tartalom Jegyzék:
-1. [Projekt leírás](#Projekt leírás)
-2. [Táblák felépítése és kapcsolataik](#táblák-felépítése-és-kapcsolataik)
-    1. [**CEDRIC_CUT_TESTS** tábla](#1cedric_cut_tests-tábla)
-    2. [**BLADEHQ_ACEL_ERTEKELES** tábla](#2-bladehq_acel_ertekeles-tábla)
-    3. [**KES_BOLT** tábla](#3-kes_bolt-tábla)
-3. [Normalizálás](#normalizálás)
+1. [Projekt leírás](#Projekt_leírás)
+2. [A projekthez használt nyelvek](#A-projekthez-használt-nyelvek)
+3. [Rétegzés](#Rétegzés)
+4. [Modellek](#Modellek)
+    1. [User](#User)
+    2. [Game](#Game)
+    3. [Achievement](#Game)
 
 
 ## Projekt leírás
