@@ -11,12 +11,12 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 
 ## A projekthez használt nyelvek
 
--ASP.NET CORE WEP APP / C#
+-
 -HTML
 -CSS
 -JAVASCRIPT
 
-- George Washington
+- ASP.NET CORE WEP APP / C#
 - John Adams
 - Thomas Jefferson
 
