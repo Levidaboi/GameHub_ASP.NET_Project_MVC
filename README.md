@@ -1,7 +1,7 @@
 # GameHub Projekt
 <br/>
 <br/>
-##  Tartalom Jegyzék:
+## Tartalom Jegyzék:
 - [Projekt leírás](#projekt-le-r-s)
 - [A projekthez használt nyelvek](#a-projekthez-haszn-lt-nyelvek)
 - [Rétegzés](#r-tegz-s)
