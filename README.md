@@ -17,7 +17,7 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 - JAVASCRIPT
 
 `git status`
-`STEAM`
+`STEAM` hh
 
 
  
