@@ -2,13 +2,12 @@
 <br/>
 <br/>
 ##  Tartalom Jegyzék:
-1. [Projekt leírás](#Projekt_leírás)
-2. [A projekthez használt nyelvek](#A-projekthez-használt-nyelvek)
-3. [Rétegzés](#Rétegzés)
-4. [Modellek](#Modellek)
-    1. [User](#User)
-    2. [Game](#Game)
-    3. [Achievement](#Game)
+- [Projekt leírás](#projekt-le-r-s)
+- [A projekthez használt nyelvek](#a-projekthez-haszn-lt-nyelvek)
+- [Rétegzés](#r-tegz-s)
+- [Modellek](#modellek)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ## Projekt leírás
