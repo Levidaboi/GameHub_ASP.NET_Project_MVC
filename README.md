@@ -2,7 +2,7 @@
 <br/>
 <br/>
 
-## Projekt leírás:
+## Projekt leírás
 <br/>
 
 Ezzel az ASP.Net projekttel egy olyan  **STEAM** -hez hasonló online közösségi platformot kívántam szimulálni amelyen képesek vagyunk felhasználói fiókokat regisztrálni és menedzselni.Az egyes fiókokhoz képesek vagyunk játékszoftereket hozzáadni és törölni , a játékokhoz pedig a felhasználó által megszerzett kitüntetéseket lehet feltűntetni.
@@ -60,7 +60,6 @@ Az egyes modellek és adattagjaik , melyeket akár meg is változtathatunk az ap
 </br>
 
 > Minden esetben szigorúan one-to-many kapcsolat áll fent
-
 
 
  
