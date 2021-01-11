@@ -22,7 +22,9 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 A projekt egy rétegzett alkalmazás, ezek a rétegek :
 1. Models
    - A projektben haszált modellek osztályait tartalmazza , ezek közül a 3 legfontosabb :
-     - User
+     - User : 
+       - userid
+      
      
 
 
