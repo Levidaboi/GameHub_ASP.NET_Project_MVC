@@ -1,3 +1,7 @@
-# na cső
-**haliho**
+# GameHub Project
+
+## Projekt leírás: 
+
+
+
 
