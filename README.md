@@ -1,6 +1,8 @@
-# GameHub Project
+# GameHub Projekt
 
-## Projekt leírás: 
+## Projekt leírás:
+<br/>
+ddd
 
 
 
