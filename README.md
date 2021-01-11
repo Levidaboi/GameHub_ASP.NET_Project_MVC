@@ -12,13 +12,18 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 
 ## A projekthez használt nyelvek
 
-- ASP.NET CORE WEP APP / C#
+- ASP.NET CORE WEP APP (C#)
 - HTML
 - CSS
 - JAVASCRIPT
 
-`git status`
-`STEAM` hh
+## Rétegzés
+
+A projekt egy rétegzett alkalmazás, ezek a rétegek :
+1. Models
+   - A projektben haszált modellek osztályait tartalmazza , ezek közül a 3 legfontosabb :
+     - User
+     
 
 
  
