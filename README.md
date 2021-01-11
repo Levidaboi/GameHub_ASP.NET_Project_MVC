@@ -54,8 +54,11 @@ Az egyes modellek és adattagjaik , melyeket akár meg is változtathatunk az ap
 
 > Természetesen minden osztályhoz tartozik egy ID adattag melyek futási idő alatt jönnek létre 
 </br>
+
 > Ezeken felül minden osztályhoz tartozik egy adattag mely a példányt tartalmazó másik pédányra mutat (ha létezik olyan) , illetve a tartalmazó osztályban egy lista(pl. egy játéknak kötelező tartalmaznia egy UserId-t , a játékosnak pedig egy GameLibrary listát) ezután a kapcsolat tranzienseket használva jön létre.
+
 </br>
+
 > Minden esetben szigorúan one-to-many kapcsolat áll fent
 
 
