@@ -11,8 +11,8 @@ Lehetőség van az egyes fiókokhoz tartozó játékokat és az azokhoz rendelt 
 
 ## A projekthez használt nyelvek
 
--
--HTML
+
+- HTML
 -CSS
 -JAVASCRIPT
 
