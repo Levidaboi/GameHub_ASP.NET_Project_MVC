@@ -27,8 +27,11 @@ A projekt egy rétegzett alkalmazás, ezek a rétegek :
      - Achievement
 2. Data
    - A projekt adatbázisáért felel , mely ez esetben egy `.mdf` fájl
-      
-     
+3. Repository 
+   - A `Data` és a `Logic` réteg között biztosít kapcsolatot , ebben az esetben a 3 fő modellhez tartozó **CRUD** metódusok szerepelnek itt
+4. Logic 
+   -  
+
 
 
  
