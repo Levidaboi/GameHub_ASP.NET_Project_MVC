@@ -2,9 +2,9 @@
 <br/>
 <br/>
 ## Tartalom Jegyzék:
-- [Projekt leírás](#projekt-le-r-s)
-- [A projekthez használt nyelvek](#a-projekthez-haszn-lt-nyelvek)
-- [Rétegzés](#r-tegz-s)
+- [Projekt leírás](#projekt-leírás)
+- [A projekthez használt nyelvek](#a-projekthez-használt-nyelvek)
+- [Rétegzés](#rétegzés)
 - [Modellek](#modellek)
 
 
