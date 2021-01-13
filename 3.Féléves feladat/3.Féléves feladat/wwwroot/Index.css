@@ -9,12 +9,7 @@ body {
 }
 
 
-.container {
-    left :16%;
-    top : 30%;
-    justify-content : center;
-    position: absolute;
-}
+
 
 
 h1 {
@@ -54,6 +49,15 @@ h2 {
     color: #ffb703;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.played {
+    left: 35%;
+    top: 10%;
+    justify-content: center;
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 
 
