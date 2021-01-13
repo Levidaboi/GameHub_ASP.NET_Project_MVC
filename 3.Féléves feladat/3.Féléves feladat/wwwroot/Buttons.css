@@ -59,8 +59,8 @@
 }
 
 .up {
-    --color: #e4cb58;
-    --hover: #94e458;
+    --color: #8fc866;
+    --hover: #66c887;
 }
 
 .slide {
@@ -92,6 +92,11 @@ button {
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
+   
+}
+
+.addbutt {
+   left : 20%; 
 }
 
 

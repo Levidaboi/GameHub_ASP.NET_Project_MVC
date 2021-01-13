@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="~/AddUser.css" rel="stylesheet" />
+    <link href="~/Buttons.css" rel="stylesheet" />
 </head>
 
 <body>
+
+    <div>
+        <div class="stars-01"></div>
+        <div class="stars-02"></div>
+        <div class="stars-03"></div>
+        <div class="stars-04"></div>
+    </div>
     <h1>  Register a new user</h1>
     <div class="formcss">
         <form action="/Home/AddUser" method="post">
@@ -22,8 +30,12 @@
             <input type="submit" value="Add" />
         </form>
     </div>
-    <input type="button" class="btn btn-warning" onclick="location.href='/';" value="Back" />
-    <input type="button" class="btn btn-warning" onclick="location.href='/Home/ListUsers';" value="Back" />
+    <div class="addbutt">
+        <button class="up" onclick="location.href='/';">Back</button>
+        <br />
+
+        <button class="up" onclick="location.href='/Home/ListUsers';">List users</button>
+    </div>
 </body>
 
 </html>
