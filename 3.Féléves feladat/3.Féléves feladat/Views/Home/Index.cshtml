@@ -12,11 +12,17 @@
 
 
     <script>
+        
+        const info = document.querySelector('.Info');
+        const closeInfo = document.querySelector('.close-info');
+
+
+
         const colors = [
-            '#711c91',
-            '#ea00d9',
-            '#0abdc6',
-            '#133e7c'
+            '#FF5632',
+            '#FF8E00',
+            '#FFDA00',
+            '#E2FF00'
         ];
 
         createSquare = () => {
@@ -42,6 +48,18 @@
 
 
         setInterval(createSquare, 150);
+
+        document.querySelector('.show-info').addEventListener('click', function () {
+            console.log('megnyomva');
+            info.classList.remove('hidden');
+
+        });
+
+        closeInfo.addEventListener('click', function () {
+            info.classList.add('hidden');
+        });
+        
+
     </script>
 
 
@@ -58,11 +76,15 @@
     </div>
     <div class="block">
         <a href="#"><img src="levihub.png" class="logo"></a>
+        <br />
+        
     </div>
     
     
     
     <div class="container">
+        
+
         <button class="fill" onclick="location.href='/Home/GenerateData';">Generate Data</button>
 
         <br />
@@ -73,17 +95,17 @@
 
         <br />
         <button class="fill" onclick="location.href='/Home/ListAllGames';">List Games</button>
-        
+
         <br />
         <button class="fill" onclick="location.href='/Home/ListAchievements';">List Achievements</button>
-        
+
         <br />
         <button class="fill" onclick="location.href='/Home/Statistics';">Show statistics for all players</button>
         <br />
         <button class="fill" onclick="location.href='/Home/SpecificStats';">Show statistics</button>
         <br />
     </div>
-
+    
 
 </body>
 
