@@ -22,9 +22,11 @@ namespace Logic
            
         }
 
-        public void DeleteAchi(Achievement a)
+        public void DeleteAchi(string uid)
         {
-            achiRepo.Delete(a);
+
+
+            achiRepo.Delete(uid);
         }
 
         public IQueryable<Achievement> GetAchievements()

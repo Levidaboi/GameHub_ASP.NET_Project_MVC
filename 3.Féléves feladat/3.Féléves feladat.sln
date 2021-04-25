@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "ClassLibrary1\Logi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib", "TestLib\TestLib.csproj", "{D09EDBB1-9C27-4AA1-94A3-16D602B90900}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiApp", "ApiApp\ApiApp.csproj", "{68DCC0E3-A16C-4AB0-BDF6-E68BF0458E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConsumer", "ApiConsumer\ApiConsumer.csproj", "{D7D398F6-7EA4-4F11-85BA-40CF2CB4FA87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{D09EDBB1-9C27-4AA1-94A3-16D602B90900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09EDBB1-9C27-4AA1-94A3-16D602B90900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09EDBB1-9C27-4AA1-94A3-16D602B90900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DCC0E3-A16C-4AB0-BDF6-E68BF0458E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DCC0E3-A16C-4AB0-BDF6-E68BF0458E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DCC0E3-A16C-4AB0-BDF6-E68BF0458E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DCC0E3-A16C-4AB0-BDF6-E68BF0458E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D398F6-7EA4-4F11-85BA-40CF2CB4FA87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D398F6-7EA4-4F11-85BA-40CF2CB4FA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D398F6-7EA4-4F11-85BA-40CF2CB4FA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D398F6-7EA4-4F11-85BA-40CF2CB4FA87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

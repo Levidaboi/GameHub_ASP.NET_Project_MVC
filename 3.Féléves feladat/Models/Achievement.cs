@@ -13,6 +13,7 @@ namespace Models
     public class Achievement
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string AchiId { get; set; }
         public string Name { get; set; }
         public AchiLevel achiLevel { get; set; }
