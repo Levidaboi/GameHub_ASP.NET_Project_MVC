@@ -31,11 +31,12 @@ namespace ApiApp.Controllers
             return logic.GetAchievement(uid);
         }
 
-        [HttpGet()]
+        [HttpGet]
         public IEnumerable<Achievement> GetAchievements(string uid)
         {
             return logic.GetAchievements();
         }
+
 
 
         [HttpPost()]

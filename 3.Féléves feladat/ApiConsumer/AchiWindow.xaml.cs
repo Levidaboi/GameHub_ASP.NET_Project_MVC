@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,59 @@ namespace ApiConsumer
     /// </summary>
     public partial class AchiWindow : Window
     {
+        Game g;
         public AchiWindow()
         {
             InitializeComponent();
+        }
+
+        public AchiWindow(Game g)
+        {
+            this.g = g;
+            InitializeComponent();
+            GetPlayListNames();
+        }
+
+        public async Task GetPlayListNames()
+        {
+            AchiGrid.ItemsSource = null;
+            RestService restservice = new RestService("https://localhost:5001/", "/Achi");
+            List<Achievement> playlistnames = await restservice.Get<Achievement>();
+
+            List<Achievement> a = new List<Achievement>();
+            foreach (var item in playlistnames)
+            {
+                if (item.GameId == g.GameId)
+                {
+                    a.Add(item);
+                }
+            }
+
+
+
+            AchiGrid.ItemsSource = a;
+           
+            AchiGrid.SelectedIndex = 0;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAchi(object sender, RoutedEventArgs e)
+        {
+            RestService restservice = new RestService("https://localhost:5001/", "/Achi");
+            restservice.Delete<string>((AchiGrid.SelectedItem as Achievement).AchiId);
+
+            GetPlayListNames();
+        }
+
+        private void Backbtn(object sender, RoutedEventArgs e)
+        {
+            GamesWindow gw = new GamesWindow(g.UserId);
+            gw.Show();
+            this.Close();
         }
     }
 }

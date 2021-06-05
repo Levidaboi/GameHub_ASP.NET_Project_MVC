@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="AddUserWindow" Height="450" Width="800">
     <Grid>
+
         <Label FontSize="40" Content="Add a new user" HorizontalAlignment="Left" Margin="30,21,0,0" VerticalAlignment="Top" Width="292"/>
         <Label Content="Username :" FontSize=" 20" HorizontalAlignment="Left" Margin="117,136,0,0" VerticalAlignment="Top" Width="119" Height="37"/>
-        <Label Content="Age :" FontSize=" 20"  HorizontalAlignment="Left" Margin="123,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="39" Width="137"/>
-
-        <Label Content="Label" FontSize=" 20" HorizontalAlignment="Left" Margin="123,262,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="37"/>
-        <TextBox HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="196" Height="38"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,262,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="37"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="596,180,0,0" VerticalAlignment="Top" Height="64" Width="87"/>
+        <Label Content="Age :" FontSize=" 20"  HorizontalAlignment="Left" Margin="117,238,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="39" Width="137"/>
+        <TextBox x:Name="userNameInput" HorizontalAlignment="Left" Margin="302,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="37"/>
+        <TextBox x:Name="ageInput" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="38" Margin="0,239,0,0"/>
+        <Button Click="AddNewUser" Content="Add" HorizontalAlignment="Left" Margin="596,180,0,0" VerticalAlignment="Top" Height="64" Width="87"/>
 
     </Grid>
 </Window>

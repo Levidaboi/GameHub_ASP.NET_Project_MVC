@@ -35,22 +35,24 @@ namespace ApiApp.Controllers
             return logic.GetGame(uid);
         }
 
-        [HttpGet()]
+        [HttpGet]
         public IEnumerable<Game> GetGames(string uid)
         {
             return logic.GetAllGames();
         }
 
 
-        [HttpPost()]
+        [HttpPost]
         public void AddGame([FromBody] Game item)
         {
+            item.GameId = Guid.NewGuid().ToString();
             logic.AddGame(item);
         }
 
         [HttpPut("{oldid}")]
         public void UpdateGame(string uid, [FromBody] Game item)
         {
+            
             logic.UpdateGame(uid, item);
         }
 

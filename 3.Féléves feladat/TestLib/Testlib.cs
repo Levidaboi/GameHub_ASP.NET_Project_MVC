@@ -69,7 +69,7 @@ namespace TestLib
             AchiLogic al = new AchiLogic(mock.Object);
             Achievement a = new Achievement() { AchiId = "bbb222", Name = "kivitted" };
 
-            al.DeleteAchi(a);
+            al.DeleteAchi(a.AchiId);
 
 
             mock.Verify(x => x.Delete(a), Times.Once);

@@ -33,6 +33,11 @@ namespace ApiConsumer
             IEnumerable<User> playlistnames =
                 await restservice.Get<User>();
 
+            UsersGrid.ItemsSource = null;
+            restservice = new RestService("https://localhost:5001/", "/User");
+            playlistnames =  await restservice.Get<User>();
+
+
             UsersGrid.ItemsSource = playlistnames;
             UsersGrid.SelectedIndex = 0;
         }

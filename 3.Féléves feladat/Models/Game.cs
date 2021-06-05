@@ -26,6 +26,7 @@ namespace Models
         public string  UserId { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual User User { get; set; }
         [NotMapped]
         [JsonIgnore]
