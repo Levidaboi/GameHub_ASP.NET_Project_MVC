@@ -192,7 +192,7 @@ namespace _3.Féléves_feladat.Controllers
             userLogic.AddNewUser(u7);
 
             Game g14 = new Game() { Name = "Csé gó", Genre = "Shooter", UserId = u7.UserId, Rating = 5, GameTime = 1200 };
-       /
+       
             gameLogic.AddGame(g14);
 
 
@@ -377,7 +377,7 @@ namespace _3.Féléves_feladat.Controllers
         public IActionResult DeleteAchi(string id)
         {
             Achievement a = achiLogic.GetAchievement(id);
-            achiLogic.DeleteAchi(a);
+            achiLogic.DeleteAchi(id);
             return View(nameof(ListAchi), gameLogic.GetGame(a.GameId).Achievements);
         }
 

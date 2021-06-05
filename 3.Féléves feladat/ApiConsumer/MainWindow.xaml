@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ApiConsumer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Gamehub" Height="468" Width="794">
+    <Grid >
+
+        <Button Content="Manage Database" HorizontalAlignment="Left" Margin="93,256,0,0" VerticalAlignment="Top" Height="94" Width="540" Click="ShowUserTables"/>
+        <Label Content="GameHub" FontSize="40" HorizontalAlignment="Left" Margin="250,113,0,0" VerticalAlignment="Top" Width="194" Height="67" />
+
 
     </Grid>
 </Window>

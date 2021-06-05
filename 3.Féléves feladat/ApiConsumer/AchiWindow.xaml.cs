@@ -1,5 +1,4 @@
-﻿using Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ApiConsumer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AchiWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AchiWindow : Window
     {
-        public MainWindow()
+        public AchiWindow()
         {
             InitializeComponent();
         }
-
-        private void ShowUserTables(object sender, RoutedEventArgs e)
-        {
-            Users u = new Users();
-            u.Show();
-            this.Close();
-        }
-
-        
     }
 }

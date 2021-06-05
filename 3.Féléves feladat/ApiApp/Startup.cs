@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Models;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,27 @@ namespace ApiApp
         {
             services.AddControllers();
 
-            services.AddTransient<UserLogic,UserLogic>();
-            services.AddTransient<GameLogic, GameLogic>();
-            services.AddTransient<AchiLogic, AchiLogic>();
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CarRenting Api endpoints", Version = "v1" });
+            });
 
-            services.AddTransient<UserRepo, UserRepo>();
-            services.AddTransient<GameRepo, GameRepo>();
-            services.AddTransient<AchievementRepo, AchievementRepo>();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                                  });
+            });
+
+
+            services.AddTransient<IRepo<User>, UserRepo>();
+            services.AddTransient<UserLogic, UserLogic>();
+            services.AddTransient<GameLogic, GameLogic>();
+            services.AddTransient<IRepo<Game>, GameRepo>();
+            services.AddTransient<AchiLogic, AchiLogic>();
+            services.AddTransient<IRepo<Achievement>, AchievementRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +54,13 @@ namespace ApiApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

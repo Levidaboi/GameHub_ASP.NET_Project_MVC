@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ApiApp.Controllers
 {
     [ApiController]
-    [Route("{controller}")]
+    [Route("User")]
     public class UserController
     {
         UserLogic logic;
@@ -23,6 +23,7 @@ namespace ApiApp.Controllers
         public void DeleteUser(string uid)
         {
             logic.DeleteUser(uid);
+            
         }
 
         [HttpGet("{uid}")]
@@ -31,14 +32,14 @@ namespace ApiApp.Controllers
             return logic.GetUser(uid);
         }
 
-        [HttpGet()]
+        [HttpGet]
         public IEnumerable<User> GetUsers(string uid)
         {
             return logic.GetUsers();
         }
 
         
-        [HttpPost()]
+        [HttpPost]
         public void AddUser([FromBody] User item)
         {
             logic.AddNewUser(item);

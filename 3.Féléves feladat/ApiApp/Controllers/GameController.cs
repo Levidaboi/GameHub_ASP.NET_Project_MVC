@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ApiApp.Controllers
 {
     [ApiController]
-    [Route("{controller}")]
+    [Route("Game")]
     public class GameController
     {
         GameLogic logic;
@@ -19,10 +19,14 @@ namespace ApiApp.Controllers
             this.logic = logic;
         }
 
+       
+
+
         [HttpDelete("{uid}")]
         public void DeleteGame(string uid)
         {
             logic.DeleteGame(uid);
+           
         }
 
         [HttpGet("{uid}")]

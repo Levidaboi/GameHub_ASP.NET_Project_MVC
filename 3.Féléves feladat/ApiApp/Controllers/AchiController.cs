@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ApiApp.Controllers
 {
     [ApiController]
-    [Route("{controller}")]
+    [Route("Achi")]
     public class AchiController
     {
         AchiLogic logic;
