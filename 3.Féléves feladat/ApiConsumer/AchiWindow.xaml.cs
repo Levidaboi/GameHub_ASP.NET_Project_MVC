@@ -55,9 +55,11 @@ namespace ApiConsumer
             AchiGrid.SelectedIndex = 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddNewAchi(object sender, RoutedEventArgs e)
         {
-
+            AddNewAchi ana = new AddNewAchi(g);
+            ana.Show();
+            this.Close();
         }
 
         private void DeleteAchi(object sender, RoutedEventArgs e)

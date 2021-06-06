@@ -1,0 +1,20 @@
+﻿<Window x:Class="ApiConsumer.AddNewAchi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiConsumer"
+        mc:Ignorable="d"
+        Title="AddNewAchi" Height="470" Width="807">
+    <Grid Margin="0,0,0,1">
+        <Label Content="Add a new achievement" FontSize="40" HorizontalAlignment="Left" Margin="32,26,0,0" VerticalAlignment="Top" Height="63" Width="438"/>
+        <Label Content="Achievement Name" FontSize="20" HorizontalAlignment="Left" Margin="127,125,0,0" VerticalAlignment="Top" Height="46" Width="207"/>
+        <Label Content="Achievement Level"  FontSize="20" HorizontalAlignment="Left" Margin="125,202,0,0" VerticalAlignment="Top" Height="39" Width="187"/>
+        <TextBox HorizontalAlignment="Left" Name="nameInput" FontSize="20"  Margin="383,119,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="38"/>
+        <RadioButton Content="Gold" x:Name="goldcheck" IsChecked="True" HorizontalAlignment="Left" Margin="374,208,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Silver" x:Name="silvercheck" HorizontalAlignment="Left" Margin="374,232,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Bronze" x:Name="bronzecheck" HorizontalAlignment="Left" Margin="373,255,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add" Click="Add" HorizontalAlignment="Left" Margin="576,268,0,0" VerticalAlignment="Top" Height="57" Width="94"/>
+
+    </Grid>
+</Window>

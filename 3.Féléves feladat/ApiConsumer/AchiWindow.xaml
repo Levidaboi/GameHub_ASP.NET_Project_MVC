@@ -8,7 +8,7 @@
         Title="AchiWindow" Height="450" Width="800">
     <Grid>
         <DataGrid x:Name="AchiGrid" Margin="27,47,408,62"/>
-        <Button Click="Button_Click" Content="Add new Achievement" HorizontalAlignment="Left" Margin="529,124,0,0" VerticalAlignment="Top" Height="54" Width="137"/>
+        <Button Click="AddNewAchi" Content="Add new Achievement" HorizontalAlignment="Left" Margin="529,124,0,0" VerticalAlignment="Top" Height="54" Width="137"/>
         <Button Content="Delete" Click="DeleteAchi" HorizontalAlignment="Left" Margin="540,222,0,0" VerticalAlignment="Top" Height="55" Width="112"/>
         <Button Content="Back" Click="Backbtn" HorizontalAlignment="Left" Margin="549,311,0,0" VerticalAlignment="Top" Height="57" Width="106"/>
 

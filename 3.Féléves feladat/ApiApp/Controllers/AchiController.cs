@@ -42,6 +42,7 @@ namespace ApiApp.Controllers
         [HttpPost()]
         public void AddAchievement([FromBody] Achievement item)
         {
+            item.AchiId = Guid.NewGuid().ToString();
             logic.AddAchi(item);
         }
 
