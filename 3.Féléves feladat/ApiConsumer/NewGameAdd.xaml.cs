@@ -37,7 +37,7 @@ namespace ApiConsumer
         {
             Game g = new Game() { Name = nameInput.Text.ToString() , Genre = genreInput.Text.ToString(), Rating = int.Parse(ratingInput.Text) , GameTime = int.Parse(gameTimeInput.Text) , UserId = userId.ToString() };
 
-            RestService restservice = new RestService("https://localhost:5001/", "/Game");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Game");
             restservice.Post<Game>(g);
 
             GamesWindow gw = new GamesWindow(userId);

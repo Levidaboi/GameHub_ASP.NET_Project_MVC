@@ -12,27 +12,27 @@ namespace Repository
         UserDbContext db = new UserDbContext();
         public void Add(User item)
         {
-            db.Users.Add(item);
+            db.Gamers.Add(item);
             Save();
         }
 
         public void Delete(User item)
         {
-            db.Users.Remove(item);
+            db.Gamers.Remove(item);
             Save();
         }
 
         public void Delete(string id)
         {
             User item = Read(id);
-            db.Users.Remove(item);
+            db.Gamers.Remove(item);
             Save();
             
         }
 
         public User Read(string uid)
         {
-            User item = (from x in db.Users
+            User item = (from x in db.Gamers
                          where x.UserId == uid
                          select x).FirstOrDefault();
             return item;
@@ -40,7 +40,7 @@ namespace Repository
 
         public IQueryable<User> AllItem()
         {
-            return db.Users.AsQueryable();
+            return db.Gamers.AsQueryable();
         }
 
         public void Save()

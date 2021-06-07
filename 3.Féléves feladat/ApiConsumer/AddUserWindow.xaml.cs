@@ -32,7 +32,7 @@ namespace ApiConsumer
 
 
 
-            RestService restservice = new RestService("https://localhost:5001/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
             restservice.Post<User>(u);
 
 

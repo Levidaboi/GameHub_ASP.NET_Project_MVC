@@ -21,16 +21,32 @@ namespace ApiConsumer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string token;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void ShowUserTables(object sender, RoutedEventArgs e)
+        private async void Login(object sender, RoutedEventArgs e)
         {
-            Users u = new Users();
-            u.Show();
-            this.Close();
+
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Auth");
+            TokenViewModel tvm = await restservice.Put<TokenViewModel, LoginViewModel>(new LoginViewModel()
+            {
+                Username = nameInput.Text,
+                Password = passwordInput.Text
+            });
+            token = tvm.Token;
+
+
+            if (token != null)
+            {
+                Users u = new Users();
+                u.Show();
+                this.Close();
+            }
+
+           
         }
 
         

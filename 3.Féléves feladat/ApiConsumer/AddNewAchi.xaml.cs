@@ -53,7 +53,7 @@ namespace ApiConsumer
                 a.achiLevel = AchiLevel.bronze;
             }
 
-            RestService restservice = new RestService("https://localhost:5001/", "/Achi");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Achi");
             restservice.Post<Achievement>(a);
 
 

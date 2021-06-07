@@ -41,12 +41,12 @@ namespace ApiConsumer
         public async Task GetPlayListNames(string userid)
         {
             gameGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://localhost:5001/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
             User playlistnames = await restservice.Get<User,string>(userid);
 
             gameGrid.ItemsSource = playlistnames.GameLibrary;
 
-            restservice = new RestService("https://localhost:5001/", "/User");
+            restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
             playlistnames = await restservice.Get<User, string>(userid);
 
             gameGrid.ItemsSource = playlistnames.GameLibrary; 
@@ -56,7 +56,7 @@ namespace ApiConsumer
         public async Task GetPlayListNames()
         {
             gameGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://localhost:5001/", $"/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", $"/User");
             User playlistnames = new User();
 
             gameGrid.ItemsSource = playlistnames.GameLibrary;
@@ -71,7 +71,7 @@ namespace ApiConsumer
 
         private async void DeleteGame(object sender, RoutedEventArgs e)
         {
-            RestService restservice = new RestService("https://localhost:5001/", "/Game");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Game");
             restservice.Delete<string>((gameGrid.SelectedItem as Game).GameId);
 
 

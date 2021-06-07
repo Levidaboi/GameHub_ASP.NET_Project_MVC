@@ -36,7 +36,7 @@ namespace ApiConsumer
         public async Task GetPlayListNames()
         {
             AchiGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://localhost:5001/", "/Achi");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Achi");
             List<Achievement> playlistnames = await restservice.Get<Achievement>();
 
             List<Achievement> a = new List<Achievement>();
@@ -64,7 +64,7 @@ namespace ApiConsumer
 
         private void DeleteAchi(object sender, RoutedEventArgs e)
         {
-            RestService restservice = new RestService("https://localhost:5001/", "/Achi");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Achi");
             restservice.Delete<string>((AchiGrid.SelectedItem as Achievement).AchiId);
 
             GetPlayListNames();
