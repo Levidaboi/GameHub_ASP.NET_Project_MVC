@@ -21,14 +21,15 @@ namespace ApiConsumer
     public partial class NewGameAdd : Window
     {
         string userId;
-
+        string token;
         public NewGameAdd()
         {
             InitializeComponent();
         }
 
-        public NewGameAdd(string userid)
+        public NewGameAdd(string userid,string token)
         {
+            this.token = token;
             userId = userid;
             InitializeComponent();
         }
@@ -40,14 +41,14 @@ namespace ApiConsumer
             RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Game");
             restservice.Post<Game>(g);
 
-            GamesWindow gw = new GamesWindow(userId);
+            GamesWindow gw = new GamesWindow(userId,token);
             gw.Show();            
             this.Close();
         }
 
         private void Backbtn(object sender, RoutedEventArgs e)
         {
-            GamesWindow gw = new GamesWindow(userId);
+            GamesWindow gw = new GamesWindow(userId,token);
             gw.Show();
             this.Close();
         }

@@ -31,6 +31,7 @@ namespace ApiConsumer
         {
 
             RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Auth");
+           // RestService restservice = new RestService("https://localhost:5001/", "/Auth");
             TokenViewModel tvm = await restservice.Put<TokenViewModel, LoginViewModel>(new LoginViewModel()
             {
                 Username = nameInput.Text,
@@ -41,7 +42,7 @@ namespace ApiConsumer
 
             if (token != null)
             {
-                Users u = new Users();
+                Users u = new Users(token);
                 u.Show();
                 this.Close();
             }

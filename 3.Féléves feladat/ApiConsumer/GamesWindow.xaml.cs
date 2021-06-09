@@ -21,17 +21,20 @@ namespace ApiConsumer
     public partial class GamesWindow : Window
     {
         string userId;
+        string token;
 
-        public GamesWindow( User u)
+        public GamesWindow( User u , string token)
         {
             //itt lehet hiba
             InitializeComponent();
             this.userId = u.UserId;
+            this.token = token;
             GetPlayListNames(userId);
-        }
-        public GamesWindow(string uid)
-        {
             
+        }
+        public GamesWindow(string uid, string token)
+        {
+            this.token = token;
             InitializeComponent();
             this.userId = uid;
             GetPlayListNames(uid);
@@ -41,12 +44,12 @@ namespace ApiConsumer
         public async Task GetPlayListNames(string userid)
         {
             gameGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User" , token);
             User playlistnames = await restservice.Get<User,string>(userid);
 
             gameGrid.ItemsSource = playlistnames.GameLibrary;
 
-            restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
+            restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User", token);
             playlistnames = await restservice.Get<User, string>(userid);
 
             gameGrid.ItemsSource = playlistnames.GameLibrary; 
@@ -56,7 +59,7 @@ namespace ApiConsumer
         public async Task GetPlayListNames()
         {
             gameGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", $"/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", $"/User", token);
             User playlistnames = new User();
 
             gameGrid.ItemsSource = playlistnames.GameLibrary;
@@ -71,7 +74,7 @@ namespace ApiConsumer
 
         private async void DeleteGame(object sender, RoutedEventArgs e)
         {
-            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Game");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/Game", token);
             restservice.Delete<string>((gameGrid.SelectedItem as Game).GameId);
 
 
@@ -83,7 +86,7 @@ namespace ApiConsumer
 
         private void BackBtn(object sender, RoutedEventArgs e)
         {
-            Users uw = new Users();
+            Users uw = new Users(token);
             uw.Show();
             this.Close();
 
@@ -92,7 +95,7 @@ namespace ApiConsumer
 
         private void AddnewGame(object sender, RoutedEventArgs e)
         {
-            NewGameAdd ang = new NewGameAdd(userId);
+            NewGameAdd ang = new NewGameAdd(userId,token);
             ang.Show();
             this.Close();
             
@@ -100,8 +103,15 @@ namespace ApiConsumer
 
         private void ListAchievements(object sender, RoutedEventArgs e)
         {
-            AchiWindow aw = new AchiWindow(gameGrid.SelectedItem as Game);
+            AchiWindow aw = new AchiWindow(gameGrid.SelectedItem as Game, token);
             aw.Show();
+            this.Close();
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            EditGame eg = new EditGame(token , gameGrid.SelectedItem as Game);
+            eg.Show();
             this.Close();
         }
     }

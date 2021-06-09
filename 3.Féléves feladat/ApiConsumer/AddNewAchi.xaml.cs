@@ -22,14 +22,16 @@ namespace ApiConsumer
     {
         string gameId;
         Game game1;
+        string token;
 
         public AddNewAchi()
         {
             InitializeComponent();
         }
 
-        public AddNewAchi(Game game)
+        public AddNewAchi(Game game , string token)
         {
+            this.token = token;
             this.gameId = game.GameId;
             game1 = game;
             InitializeComponent();
@@ -57,12 +59,12 @@ namespace ApiConsumer
             restservice.Post<Achievement>(a);
 
 
-            AchiWindow aw = new AchiWindow(game1);
+            AchiWindow aw = new AchiWindow(game1 , token);
             aw.Show();
             aw.Close();
             this.Close();
 
-            aw = new AchiWindow(game1);
+            aw = new AchiWindow(game1 , token);
             aw.Show();
             
         }

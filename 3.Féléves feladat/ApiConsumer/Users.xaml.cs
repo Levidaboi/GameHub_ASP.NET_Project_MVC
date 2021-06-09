@@ -20,8 +20,10 @@ namespace ApiConsumer
     /// </summary>
     public partial class Users : Window
     {
-        public Users()
+        string token;
+        public Users(string token)
         {
+            this.token = token;
             InitializeComponent();
             GetPlayListNames();
         }
@@ -29,12 +31,13 @@ namespace ApiConsumer
         public async Task GetPlayListNames()
         {
             UsersGrid.ItemsSource = null;
-            RestService restservice = new RestService("https://localhost:5001/", "/User");
+           // RestService restservice = new RestService("https://localhost:5001/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User", token);
             IEnumerable<User> playlistnames =
                 await restservice.Get<User>();
 
             UsersGrid.ItemsSource = null;
-            restservice = new RestService("https://localhost:5001/", "/User");
+            restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User" , token);
             playlistnames =  await restservice.Get<User>();
 
 
@@ -45,13 +48,13 @@ namespace ApiConsumer
         private async void DeleteUser(object sender, RoutedEventArgs e)
         {
             
-            RestService restservice = new RestService("https://localhost:5001/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User", token);
             restservice.Delete<string>((UsersGrid.SelectedItem as User).UserId);
 
 
             UsersGrid.ItemsSource = null;
 
-            RestService restservice2 = new RestService("https://localhost:5001/", "/User");
+            RestService restservice2 = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User", token);
             IEnumerable<User> playlistnames =
                 await restservice2.Get<User>();
 
@@ -61,18 +64,23 @@ namespace ApiConsumer
 
         private void AddNewUser(object sender, RoutedEventArgs e)
         {
-            AddUserWindow auw = new AddUserWindow();
+            AddUserWindow auw = new AddUserWindow(token);
             auw.Show();
             this.Close();
         }
 
         private void ListUsersGames(object sender, RoutedEventArgs e)
         {
-            GamesWindow gw = new GamesWindow(UsersGrid.SelectedItem as User);
+            GamesWindow gw = new GamesWindow(UsersGrid.SelectedItem as User,token);
             gw.Show();
             this.Close();
         }
 
-        
+        private void EditUser(object sender, RoutedEventArgs e)
+        {
+            EditUser eu = new EditUser(token, UsersGrid.SelectedItem as User);
+            eu.Show();
+            this.Close();
+        }
     }
 }

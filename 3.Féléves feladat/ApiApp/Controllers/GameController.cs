@@ -49,7 +49,7 @@ namespace ApiApp.Controllers
             logic.AddGame(item);
         }
 
-        [HttpPut("{oldid}")]
+        [HttpPut("{uid}")]
         public void UpdateGame(string uid, [FromBody] Game item)
         {
             

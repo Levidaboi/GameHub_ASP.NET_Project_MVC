@@ -1,6 +1,7 @@
 ﻿using Logic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace ApiApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Customer,Admin")]
     [ApiController]
     [Route("User")]
-    public class UserController
+    public class UserController : ControllerBase
     {
         UserLogic logic;
 
@@ -25,7 +26,7 @@ namespace ApiApp.Controllers
         public void DeleteUser(string uid)
         {
             logic.DeleteUser(uid);
-            
+
         }
 
         [HttpGet("{uid}")]
@@ -40,17 +41,30 @@ namespace ApiApp.Controllers
             return logic.GetUsers();
         }
 
-        
+
         [HttpPost]
         public void AddUser([FromBody] User item)
         {
             logic.AddNewUser(item);
         }
 
-        [HttpPut("{oldid}")]
-        public void UpdateUser(string uid ,[FromBody] User item)
+        [HttpPut("{uid}")]
+        public IActionResult UpdateUser(string uid ,[FromBody] User item)
         {
-            logic.UpdateUser(uid , item);
+
+            try
+            {
+                logic.UpdateUser(uid, item);
+                return Ok();
+            }
+            catch (Exception e )
+            {
+
+                return StatusCode(400,$"Bad Request error : {e}");
+            }
+              
+                
+          
         }
 
     }

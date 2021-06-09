@@ -10,8 +10,9 @@
         <DataGrid x:Name="UsersGrid" IsReadOnly="True" Margin="25,56,290,22" Grid.ColumnSpan="2"/>
         <Label Content="Users"  FontSize="20" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top" Width="247" Height="41"/>
         <Button Content="Delete User" Click="DeleteUser" HorizontalAlignment="Left" Margin="591,208,0,0" VerticalAlignment="Top" Height="53" Width="102"/>
-        <Button Content="List User's Games" Click="ListUsersGames" HorizontalAlignment="Left" Margin="591,92,0,0" VerticalAlignment="Top" Height="46" Width="102"/>
+        <Button Content="List User's Games" Click="ListUsersGames" HorizontalAlignment="Left" Margin="591,28,0,0" VerticalAlignment="Top" Height="46" Width="102"/>
         <Button Content="Add New User" Click="AddNewUser" HorizontalAlignment="Left" Margin="591,325,0,0" VerticalAlignment="Top" Height="49" Width="102"/>
-        
+        <Button Content="Edit User" Click="EditUser" HorizontalAlignment="Left" Margin="591,107,0,0" VerticalAlignment="Top" Height="50" Width="102"/>
+
     </Grid>
 </Window>

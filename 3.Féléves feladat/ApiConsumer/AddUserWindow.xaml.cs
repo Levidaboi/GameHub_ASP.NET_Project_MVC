@@ -20,8 +20,10 @@ namespace ApiConsumer
     /// </summary>
     public partial class AddUserWindow : Window
     {
-        public AddUserWindow()
+        string token;
+        public AddUserWindow(string token)
         {
+            this.token = token;
             InitializeComponent();
         }
 
@@ -32,11 +34,11 @@ namespace ApiConsumer
 
 
 
-            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User");
+            RestService restservice = new RestService("https://androidfelevesendpoints.azurewebsites.net/", "/User", token);
             restservice.Post<User>(u);
 
 
-            Users uw = new Users();
+            Users uw = new Users(token);
             uw.Show();
             this.Close();
         }

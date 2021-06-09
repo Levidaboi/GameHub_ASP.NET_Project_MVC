@@ -46,7 +46,7 @@ namespace ApiApp.Controllers
             logic.AddAchi(item);
         }
 
-        [HttpPut("{oldid}")]
+        [HttpPut("{uid}")]
         public void UpdateAchievement(string uid, [FromBody] Achievement item)
         {
             logic.UpdateAchi(uid, item);

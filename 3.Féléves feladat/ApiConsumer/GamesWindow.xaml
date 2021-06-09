@@ -9,10 +9,11 @@
     <Grid >
         <Label Content="Games" FontSize="40" HorizontalAlignment="Left" Margin="14,23,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="gameGrid" Margin="14,146,287,86"/>
-        <Button Content="List Achievements" Click="ListAchievements" HorizontalAlignment="Left" Margin="516,119,0,0" VerticalAlignment="Top" Height="44" Width="115"/>
-        <Button Content="Delete" Click="DeleteGame" HorizontalAlignment="Left" Margin="538,205,0,0" VerticalAlignment="Top" Height="44" Width="71"/>
+        <Button Content="List Achievements" Click="ListAchievements" HorizontalAlignment="Left" Margin="516,136,0,0" VerticalAlignment="Top" Height="44" Width="114"/>
+        <Button Content="Delete" Click="DeleteGame" HorizontalAlignment="Left" Margin="538,213,0,0" VerticalAlignment="Top" Height="44" Width="71"/>
         <Button Content="Add new game" Click="AddnewGame" HorizontalAlignment="Left" Margin="506,297,0,0" VerticalAlignment="Top" Height="42" Width="134" RenderTransformOrigin="0.676,1.188"/>
         <Button Content="Back" Click="BackBtn" HorizontalAlignment="Left" Margin="170,348,0,0" VerticalAlignment="Top" Height="41" Width="86"/>
+        <Button Content="Edit" Click="Edit" HorizontalAlignment="Left" Margin="506,55,0,0" VerticalAlignment="Top" Height="42" Width="134"/>
 
 
     </Grid>

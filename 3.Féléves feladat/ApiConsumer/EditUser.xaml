@@ -1,0 +1,17 @@
+﻿<Window x:Class="ApiConsumer.EditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiConsumer"
+        mc:Ignorable="d"
+        Title="EditUser" Height="450" Width="800">
+    <Grid>
+        <Label Content="User Name" FontSize="30" HorizontalAlignment="Left" Margin="110,90,0,0" VerticalAlignment="Top" Height="45" Width="161"/>
+        <Label Content="Age" FontSize="30" HorizontalAlignment="Left" Margin="110,179,0,0" VerticalAlignment="Top" Height="50" Width="81"/>
+        <TextBox HorizontalAlignment="Left" x:Name="nameInput" Margin="329,90,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Height="45"/>
+        <TextBox Text="" TextWrapping="Wrap" x:Name="ageInput" Margin="329,179,292,205"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Click="Edit" Margin="538,316,0,0" VerticalAlignment="Top" Height="59" Width="127"/>
+
+    </Grid>
+</Window>

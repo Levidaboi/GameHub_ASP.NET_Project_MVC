@@ -21,13 +21,15 @@ namespace ApiConsumer
     public partial class AchiWindow : Window
     {
         Game g;
+        string token;
         public AchiWindow()
         {
             InitializeComponent();
         }
 
-        public AchiWindow(Game g)
+        public AchiWindow(Game g, string token)
         {
+            this.token = token;
             this.g = g;
             InitializeComponent();
             GetPlayListNames();
@@ -57,7 +59,7 @@ namespace ApiConsumer
 
         private void AddNewAchi(object sender, RoutedEventArgs e)
         {
-            AddNewAchi ana = new AddNewAchi(g);
+            AddNewAchi ana = new AddNewAchi(g,token);
             ana.Show();
             this.Close();
         }
@@ -72,7 +74,7 @@ namespace ApiConsumer
 
         private void Backbtn(object sender, RoutedEventArgs e)
         {
-            GamesWindow gw = new GamesWindow(g.UserId);
+            GamesWindow gw = new GamesWindow(g.UserId , token);
             gw.Show();
             this.Close();
         }
